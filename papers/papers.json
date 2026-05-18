@@ -10,7 +10,7 @@
       }
     },
     {
-      "id": "paper2",
+      "id": "2026Mathematics",
       "bibtex": "@Article{math14101704, AUTHOR = {Nguyen, Tuan Anh and Lim, Damsub and Kyung, MinGi and Min, Dugki}, TITLE = {Distributed Edge Storage Systems: Proactive High-Availability Microservices with Live Migration and Rejuvenation Strategies}, JOURNAL = {Mathematics}, VOLUME = {14}, YEAR = {2026}, NUMBER = {10}, ARTICLE-NUMBER = {1704}, URL = {https://www.mdpi.com/2227-7390/14/10/1704}, ISSN = {2227-7390}, DOI = {10.3390/math14101704}}",
       "links": {
         "pdf": "papers/260515-Distributed Edge Storage Systems Proactive High-Availability Microservies with Live Migration and Rejuvenation Strategies.pdf",
