@@ -10,6 +10,33 @@
       }
     },
     {
+      "id": "paper2",
+      "bibtex": "@Article{math14101704,
+        AUTHOR = {Nguyen, Tuan Anh and Lim, Damsub and Kyung, MinGi and Min, Dugki},
+        TITLE = {Distributed Edge Storage Systems: Proactive High-Availability Microservices with Live Migration and Rejuvenation Strategies},
+        JOURNAL = {Mathematics},
+        VOLUME = {14},
+        YEAR = {2026},
+        NUMBER = {10},
+        ARTICLE-NUMBER = {1704},
+        URL = {https://www.mdpi.com/2227-7390/14/10/1704},
+        ISSN = {2227-7390},
+        ABSTRACT = {Mobile edge computing storage is increasingly used to support immersive services and Internet of Things applications that generate continuous real-time data streams. Sustained availability must therefore be maintained under both abrupt failures and software aging. Prior studies often evaluate reactive mechanisms (e.g., failover and live migration) and preventive mechanisms (e.g., software rejuvenation) separately, so their combined effect in microservice-based distributed edge storage is still unclear. We develop a Stochastic Reward Net (SRN) model for a multi-node edge storage architecture that captures hardware and software failures, software aging, high availability, live migration, and rejuvenation at both node and microservice levels. Using the model, we compare six policy scenarios and quantify Capacity-Oriented Availability COA), defined as the expected number of usable microservices while the storage layer is operational. Steady-state and sensitivity analyses over twelve timing parameters show that policies including live migration achieve the highest, or effectively tied-highest, COA across wide ranges of failure and repair rates. They also show that uncoordinated rejuvenation schedules can reduce availability when rejuvenation starts before live migration completes and terminates services prior to evacuation, a phenomenon we refer to as a Proactive Crash (PC). Across the tested ranges, edge/storage failure rates and rejuvenation trigger intervals dominate availability, while detection delays, repair times, and rejuvenation duration have a smaller influence. These results give guidelines for configuring proactive high availability so that migration completes before rejuvenation and rejuvenation is neither too frequent nor too sparse.},
+        DOI = {10.3390/math14101704}
+      }",
+      "links": {
+        "pdf": "papers/260515-Distributed Edge Storage Systems Proactive High-Availability Microservies with Live Migration and Rejuvenation Strategies.pdf",
+        "doi": "https://doi.org/10.3390/math14101704"
+      }
+    },
+
+    
+
+
+
+
+
+    {
       "id": "paper1-manual",
       "title": "Deep Learning for Image Classification: A Comprehensive Survey",
       "titleLink": "#",
