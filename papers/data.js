@@ -4,20 +4,6 @@ window.papersData = {
   "yourName": "Damsub Lim",
   "papers": [
     {
-      "id": "int1",
-      "category": "international",
-      "title": "S-iNAS: A Performance-Centric SRN Modeling and Analysis of Time and Event Based Scaling Strategies in Ceph-Based Industrial Network-Attached Storage",
-      "authors": "D Lim, TA Nguyen, J Li, E Choi, D Min, RM Cadena, B Nogueira, E Andrade, G Callou, M Di Mauro, M Torquato, FA Silva, P Maciel",
-      "venue": "Journal of Network and Systems Management 34 (1), 34",
-      "year": 2026,
-      "links": {
-        "doi": "10.1007/s10922-025-10005-6",
-        "url": "https://scholar.google.com/citations?view_op=view_citation&hl=ko&user=C5-jvk8AAAAJ&citation_for_view=C5-jvk8AAAAJ:hqOjcs7Dif8C"
-      },
-      "isSCI": true,
-      "quartile": "Q2"
-    },
-    {
       "id": "2026Mathematics",
       "category": "international",
       "title": "Distributed Edge Storage Systems: Proactive High-Availability Microservices with Live Migration and Rejuvenation Strategies",
@@ -45,7 +31,24 @@ window.papersData = {
         "doi": "10.3390/math14101704",
         "url": "https://www.mdpi.com/2227-7390/14/10/1704",
         "pdf": "papers/260515-Distributed Edge Storage Systems Proactive High-Availability Microservies with Live Migration and Rejuvenation Strategies.pdf"
-      }
+      },
+      "isSCI": true,
+      "quartile": "Q1(Top 6%, JCR 2024)"
+    },
+    {
+      "id": "int1",
+      "category": "international",
+      "title": "S-iNAS: A Performance-Centric SRN Modeling and Analysis of Time and Event Based Scaling Strategies in Ceph-Based Industrial Network-Attached Storage",
+      "authors": "D Lim, TA Nguyen, J Li, E Choi, D Min, RM Cadena, B Nogueira, E Andrade, G Callou, M Di Mauro, M Torquato, FA Silva, P Maciel",
+      "venue": "Journal of Network and Systems Management 34 (1), 34",
+      "year": 2026,
+      "links": {
+        "doi": "10.1007/s10922-025-10005-6",
+        "url": "https://scholar.google.com/citations?view_op=view_citation&hl=ko&user=C5-jvk8AAAAJ&citation_for_view=C5-jvk8AAAAJ:hqOjcs7Dif8C",
+        "pdf": "papers/251205-S-iNAS A Performance-Centric SRN Modeling and Analysis of Time and Event Based Scaling Strategies in Ceph-Based Industrial Network-Attached Storage.pdf"
+      },
+      "isSCI": true,
+      "quartile": "Q2(Top 31.2%, JCR 2024)"
     },
     {
       "id": "int2",
