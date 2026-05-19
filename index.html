@@ -1178,10 +1178,19 @@
 
     </script>
 
-    <!-- Load publication data from JS file to avoid CORS issues -->
-    <!-- loadPublications will be called automatically when this script loads -->
-    <script src="papers/data.js" onload="loadPublications()"
-        onerror="console.error('Failed to load papers/data.js'); document.getElementById('publications-container').innerHTML = '<div class=\'text-center text-red-500 py-8\'>Failed to load data</div>';"></script>
+    <!-- Load generated publication data with cache busting so new papers appear promptly. -->
+    <script>
+        (function loadPublicationDataScript() {
+            const script = document.createElement('script');
+            script.src = `papers/data.js?v=${Date.now()}`;
+            script.onload = loadPublications;
+            script.onerror = function () {
+                console.error('Failed to load papers/data.js');
+                document.getElementById('publications-container').innerHTML = '<div class=\'text-center text-red-500 py-8\'>Failed to load data</div>';
+            };
+            document.body.appendChild(script);
+        })();
+    </script>
 </body>
 
 </html>
