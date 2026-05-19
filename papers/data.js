@@ -1,196 +1,225 @@
-// This file is automatically loaded by index.html to avoid CORS issues with local file fetching
+// This file is generated from papers/papers.json by scripts/build_papers_data.js
+// Edit papers/papers.json, then run: node scripts/build_papers_data.js
 window.papersData = {
   "yourName": "Damsub Lim",
   "papers": [
-    // International
     {
       "id": "int1",
       "category": "international",
-      "isSCI": true,
-      "quartile": "Q2",
       "title": "S-iNAS: A Performance-Centric SRN Modeling and Analysis of Time and Event Based Scaling Strategies in Ceph-Based Industrial Network-Attached Storage",
       "authors": "D Lim, TA Nguyen, J Li, E Choi, D Min, RM Cadena, B Nogueira, E Andrade, G Callou, M Di Mauro, M Torquato, FA Silva, P Maciel",
       "venue": "Journal of Network and Systems Management 34 (1), 34",
       "year": 2026,
       "links": {
-        "url": "https://scholar.google.com/citations?view_op=view_citation&hl=ko&user=C5-jvk8AAAAJ&citation_for_view=C5-jvk8AAAAJ:hqOjcs7Dif8C",
-        "doi": "10.1007/s10922-025-10005-6"
+        "doi": "10.1007/s10922-025-10005-6",
+        "url": "https://scholar.google.com/citations?view_op=view_citation&hl=ko&user=C5-jvk8AAAAJ&citation_for_view=C5-jvk8AAAAJ:hqOjcs7Dif8C"
+      },
+      "isSCI": true,
+      "quartile": "Q2"
+    },
+    {
+      "id": "2026Mathematics",
+      "category": "international",
+      "title": "Distributed Edge Storage Systems: Proactive High-Availability Microservices with Live Migration and Rejuvenation Strategies",
+      "authors": [
+        {
+          "name": "Tuan Anh Nguyen",
+          "bold": false
+        },
+        {
+          "name": "Damsub Lim",
+          "bold": true
+        },
+        {
+          "name": "MinGi Kyung",
+          "bold": false
+        },
+        {
+          "name": "Dugki Min",
+          "bold": false
+        }
+      ],
+      "venue": "Mathematics",
+      "year": 2026,
+      "links": {
+        "doi": "10.3390/math14101704",
+        "url": "https://www.mdpi.com/2227-7390/14/10/1704",
+        "pdf": "papers/260515-Distributed Edge Storage Systems Proactive High-Availability Microservies with Live Migration and Rejuvenation Strategies.pdf"
       }
     },
     {
       "id": "int2",
       "category": "international",
-      "isSCI": false,
       "title": "Metaverse Distributed Storages: High Availability Quantification using Stochastic Reward Nets",
       "authors": "D Lim, TA Nguyen, D Min, E Choi, I Fe, FA Silva, P Maciel",
       "venue": "2025 International Conference on Metaverse Computing, Networking and Applications (MetaCom)",
       "year": 2025,
       "links": {
         "url": "https://scholar.google.com/citations?view_op=view_citation&hl=ko&user=C5-jvk8AAAAJ&citation_for_view=C5-jvk8AAAAJ:UebtZRa9Y70C"
-      }
+      },
+      "isSCI": false
     },
     {
       "id": "int3",
       "category": "international",
-      "isSCI": false,
       "title": "Metaverse Cloud-Edge Computing: On Aging Dependability of a Cloud-Edge-in-the-loop Simulation Platform for AAM Vehicle Digital Twin",
       "authors": "TA Nguyen, D Lim, S Nam, D Min, I Fe, FA Silva, P Maciel",
       "venue": "2025 International Conference on Metaverse Computing, Networking and Applications (MetaCom)",
       "year": 2025,
       "links": {
         "url": "https://scholar.google.com/citations?view_op=view_citation&hl=ko&user=C5-jvk8AAAAJ&citation_for_view=C5-jvk8AAAAJ:Se3iqnhoufwC"
-      }
+      },
+      "isSCI": false
+    },
+    {
+      "id": "dom1",
+      "category": "domestic",
+      "title": "An SRN-based Availability Modeling and Analysis for Edge Computing Systems with Correlated Failures",
+      "authors": "D Lim, TA Nguyen, D Min, MG KYUNG",
+      "venue": "Journal of The Korea Society of Computer and Information (한국컴퓨터정보학회논문지) 25 (10), 1-10",
+      "year": 2025,
+      "links": {
+        "doi": "10.9708/jksci.2025.30.12.025",
+        "url": "https://scholar.google.com/citations?view_op=view_citation&hl=ko&user=C5-jvk8AAAAJ&citation_for_view=C5-jvk8AAAAJ:0EnyYjriUFMC"
+      },
+      "isKSCI": true
+    },
+    {
+      "id": "dom2",
+      "category": "domestic",
+      "title": "Smart Home IoT Service Scenario",
+      "authors": "D Lim, R Ruixuhua, W Piao, D Min",
+      "venue": "Annual Conference of KIPS, 614-616",
+      "year": 2018,
+      "links": {
+        "doi": "10.22865/jita.2016.13.4.673",
+        "url": "https://scholar.google.com/citations?view_op=view_citation&hl=ko&user=C5-jvk8AAAAJ&citation_for_view=C5-jvk8AAAAJ:eQOLeE2rZwMC"
+      },
+      "isKSCI": true
     },
     {
       "id": "int4",
       "category": "international",
-      "isSCI": false,
       "title": "Model-Based Sensitivity of a Disaster Tolerant Active-Active GENESIS Cloud System",
       "authors": "TA Nguyen, X Rui, D Lim, J Oh, D Min, E Choi, TD Thang, NN Son",
       "venue": "International Conference on Industrial Networks and Intelligent Systems, 228-241",
       "year": 2017,
       "links": {
         "url": "https://scholar.google.com/citations?view_op=view_citation&hl=ko&user=C5-jvk8AAAAJ&citation_for_view=C5-jvk8AAAAJ:W7OEmFMy1HYC"
-      }
-    },
-    // Domestic
-    {
-      "id": "dom1",
-      "category": "domestic",
-      "isKSCI": true,
-      "title": "An SRN-based Availability Modeling and Analysis for Edge Computing Systems with Correlated Failures",
-      "authors": "D Lim, TA Nguyen, D Min, MG KYUNG",
-      "venue": "Journal of The Korea Society of Computer and Information (한국컴퓨터정보학회논문지) 25 (10), 1-10",
-      "year": 2025,
-      "links": {
-        "url": "https://scholar.google.com/citations?view_op=view_citation&hl=ko&user=C5-jvk8AAAAJ&citation_for_view=C5-jvk8AAAAJ:0EnyYjriUFMC",
-        "doi": "10.9708/jksci.2025.30.12.025"
-      }
-    },
-    {
-      "id": "dom2",
-      "category": "domestic",
-      "isKSCI": true,
-      "title": "Smart Home IoT Service Scenario",
-      "authors": "D Lim, R Ruixuhua, W Piao, D Min",
-      "venue": "Annual Conference of KIPS, 614-616",
-      "year": 2018,
-      "links": {
-        "url": "https://scholar.google.com/citations?view_op=view_citation&hl=ko&user=C5-jvk8AAAAJ&citation_for_view=C5-jvk8AAAAJ:eQOLeE2rZwMC",
-        "doi": "10.22865/jita.2016.13.4.673"
-      }
+      },
+      "isSCI": false
     },
     {
       "id": "dom3",
       "category": "domestic",
-      "isKSCI": true,
       "title": "실시간 철도 안전관제를 위한 DDS 기반의 일반철도 신호 데이터 규격 설계 연구",
       "authors": "박윤정， 임담섭， 민덕기， 김상암",
       "venue": "한국정보통신학회논문지 20 (4), 739-746",
       "year": "2016",
       "links": {
-        "url": "https://scholar.google.com/citations?view_op=view_citation&hl=ko&user=C5-jvk8AAAAJ&citation_for_view=C5-jvk8AAAAJ:LkGwnXOMwfcC",
-        "doi": "10.6109/jkiice.2016.20.4.739"
-      }
+        "doi": "10.6109/jkiice.2016.20.4.739",
+        "url": "https://scholar.google.com/citations?view_op=view_citation&hl=ko&user=C5-jvk8AAAAJ&citation_for_view=C5-jvk8AAAAJ:LkGwnXOMwfcC"
+      },
+      "isKSCI": true
     },
     {
       "id": "dom4",
       "category": "domestic",
-      "isKSCI": true,
       "title": "안전관제시스템 프로토콜 표준화를 위한 데이터 수집 방법",
       "authors": "신광호， 엄태화， 임담섭， 안진",
       "venue": "한국철도학회 논문집 19 (2), 159-169",
       "year": "2016",
       "links": {
-        "url": "https://scholar.google.com/citations?view_op=view_citation&hl=ko&user=C5-jvk8AAAAJ&citation_for_view=C5-jvk8AAAAJ:WF5omc3nYNoC",
-        "doi": "10.7782/JKSR.2016.19.2.159"
-      }
+        "doi": "10.7782/JKSR.2016.19.2.159",
+        "url": "https://scholar.google.com/citations?view_op=view_citation&hl=ko&user=C5-jvk8AAAAJ&citation_for_view=C5-jvk8AAAAJ:WF5omc3nYNoC"
+      },
+      "isKSCI": true
     },
     {
       "id": "dom5",
       "category": "domestic",
-      "isKSCI": true,
       "title": "스마트 IoT 게이트웨이 플랫폼 그리고 Use Case",
       "authors": "임담섭， 정현규， 민경현， 예쉬화",
       "venue": "정보화연구 (구 정보기술아키텍처연구) 13 (4), 673-683",
       "year": "2016",
       "links": {
-        "url": "https://scholar.google.com/citations?view_op=view_citation&hl=ko&user=C5-jvk8AAAAJ&citation_for_view=C5-jvk8AAAAJ:ufrVoPGSRksC",
-        "doi": "10.22865/jita.2016.13.4.673"
-      }
+        "doi": "10.22865/jita.2016.13.4.673",
+        "url": "https://scholar.google.com/citations?view_op=view_citation&hl=ko&user=C5-jvk8AAAAJ&citation_for_view=C5-jvk8AAAAJ:ufrVoPGSRksC"
+      },
+      "isKSCI": true
     },
     {
       "id": "dom6",
       "category": "domestic",
-      "isKSCI": false,
       "title": "Research on Design of DDS-based Conventional Railway Signal Data Specification for Real-time Railway Safety Monitoring and Control",
       "authors": "Y Park, D Lim, D Min, SA Kim",
       "venue": "Journal of the Korea Institute of Information and Communication Engineering",
       "year": "2016",
       "links": {
         "url": "https://scholar.google.com/citations?view_op=view_citation&hl=ko&user=C5-jvk8AAAAJ&citation_for_view=C5-jvk8AAAAJ:Tyk-4Ss8FVUC"
-      }
+      },
+      "isKSCI": false
     },
     {
       "id": "dom7",
       "category": "domestic",
-      "isKSCI": false,
       "title": "Data Collection Methods to Standardize Protocols of Safety Supervision System",
       "authors": "KH Shin, TH Um, DS Lim, J Ahn",
       "venue": "Journal of the Korean Society for Railway 19 (2), 159-169",
       "year": "2016",
       "links": {
         "url": "https://scholar.google.com/citations?view_op=view_citation&hl=ko&user=C5-jvk8AAAAJ&citation_for_view=C5-jvk8AAAAJ:zYLM7Y9cAGgC"
-      }
+      },
+      "isKSCI": false
     },
     {
       "id": "dom8",
       "category": "domestic",
-      "isKSCI": false,
       "title": "안전관제시스템 프로토콜 표준화와 상호 운용성을 위한 데이터 인터페이스장치 구현방안 연구",
       "authors": "신광호， 엄태화， 임담섭， 안진",
       "venue": "한국철도학회 학술발표대회논문집, 989-994",
       "year": "2015",
       "links": {
         "url": "https://scholar.google.com/citations?view_op=view_citation&hl=ko&user=C5-jvk8AAAAJ&citation_for_view=C5-jvk8AAAAJ:roLk4NBRz8UC"
-      }
+      },
+      "isKSCI": false
     },
     {
       "id": "dom9",
       "category": "domestic",
-      "isKSCI": false,
       "title": "A study of the data interfacing device architecture of the safety supervision system for protocol standardization and interoperability",
       "authors": "KH Shin, TH Um, D Lim, J Ahn",
       "venue": "Proceeding of 2015 Autumn Conference & Annual Meeting of the Korean Society for Railway",
       "year": "2015",
       "links": {
         "url": "https://scholar.google.com/citations?view_op=view_citation&hl=ko&user=C5-jvk8AAAAJ&citation_for_view=C5-jvk8AAAAJ:Y0pCki6q_DkC"
-      }
+      },
+      "isKSCI": false
     },
     {
       "id": "dom10",
       "category": "domestic",
-      "isKSCI": true,
       "title": "클라우드 환경에서 네트워크 전송효율 향상을 위한 ROHC Engine 설계, 구현 및 기능검정",
       "authors": "임담섭， 김성민， 민덕기",
       "venue": "정보화연구 12 (4), 677-688",
       "year": "2015",
       "links": {
-        "url": "https://scholar.google.com/citations?view_op=view_citation&hl=ko&user=C5-jvk8AAAAJ&citation_for_view=C5-jvk8AAAAJ:YsMSGLbcyi4C",
-        "doi": "10.22865/jita.2015.12.4.677"
-      }
+        "doi": "10.22865/jita.2015.12.4.677",
+        "url": "https://scholar.google.com/citations?view_op=view_citation&hl=ko&user=C5-jvk8AAAAJ&citation_for_view=C5-jvk8AAAAJ:YsMSGLbcyi4C"
+      },
+      "isKSCI": true
     },
     {
       "id": "dom11",
       "category": "domestic",
-      "isKSCI": false,
       "title": "A biometric information collecting system for biomedical big data analysis",
       "authors": "D Lim, S Hong, M Ku, D Min",
       "venue": "Proceedings of the Korean Institute of Information and Communication Sciences",
       "year": "2013",
       "links": {
         "url": "https://scholar.google.com/citations?view_op=view_citation&hl=ko&user=C5-jvk8AAAAJ&citation_for_view=C5-jvk8AAAAJ:_FxGoFyzp5QC"
-      }
+      },
+      "isKSCI": false
     }
   ]
 };
