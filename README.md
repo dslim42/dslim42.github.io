@@ -12,7 +12,7 @@ Static academic profile site for GitHub Pages.
 - `generated/portfolio-data.js`: Generated data loaded by both the website and print view. Do not edit it directly.
 - `scripts/build_portfolio_data.js`: Builds `generated/portfolio-data.js` from `content/*.json`.
 - `scripts/portfolio-ui.js`: Renders the JSON data into the existing portfolio UI and print handoff. Do not edit it for ordinary content updates.
-- `.github/workflows/publications.yml`: GitHub Action that regenerates portfolio data.
+- `.github/workflows/publications.yml`: Builds the portfolio data and deploys GitHub Pages.
 
 ## Add a Publication
 
@@ -116,8 +116,9 @@ Use these source files instead of editing content directly in `index.html`:
   and submission date.
 - `content/research-projects.json`: research-project records.
 
-After editing any JSON source, run `node scripts/build_portfolio_data.js`.
-The GitHub Action also generates the browser-readable data file after a push.
+After editing any JSON source locally, run `node scripts/build_portfolio_data.js`.
+On GitHub, every push to `main` builds the browser-readable data file from the
+JSON sources and deploys the updated Pages site automatically.
 
 ### Flexible JSON Entries
 
@@ -151,11 +152,9 @@ form or an object form such as `"title": { "en": "...", "ko": "..." }`.
 
 ## GitHub Workflow
 
-When a portfolio JSON source is changed on GitHub, the Action regenerates the
-corresponding browser data file and commits it back if it changed.
-
-This replaces the older Google Scholar scraping workflow, which was unreliable
-because Scholar blocks GitHub Actions with HTTP 403 responses.
+Every push to `main` runs the data build and deploys a fresh GitHub Pages
+artifact. This prevents a generated-data commit from being published separately
+from the JSON change that produced it.
 
 ## Local Preview
 

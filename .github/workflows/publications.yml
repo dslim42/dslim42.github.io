@@ -1,41 +1,51 @@
-name: Build Portfolio Data
+name: Deploy GitHub Pages
 
 on:
-  workflow_dispatch:
   push:
-    paths:
-      - "content/**"
-      - "scripts/build_portfolio_data.js"
+    branches: [main]
+  workflow_dispatch:
 
 permissions:
-  contents: write
+  contents: read
+  pages: write
+  id-token: write
+
+concurrency:
+  group: pages
+  cancel-in-progress: false
 
 jobs:
-  build-publications:
+  build:
     runs-on: ubuntu-latest
 
     steps:
-      - name: Checkout code
+      - name: Checkout
         uses: actions/checkout@v4
-        with:
-          token: ${{ secrets.GITHUB_TOKEN }}
 
       - name: Set up Node
         uses: actions/setup-node@v4
         with:
           node-version: "20"
 
-      - name: Generate portfolio data
+      - name: Build portfolio data
         run: node scripts/build_portfolio_data.js
 
-      - name: Commit generated data
-        run: |
-          if git diff --quiet -- generated/portfolio-data.js; then
-            echo "Generated portfolio data is already up to date."
-            exit 0
-          fi
-          git config user.name "github-actions[bot]"
-          git config user.email "github-actions[bot]@users.noreply.github.com"
-          git add generated/portfolio-data.js
-          git commit -m "Build portfolio data"
-          git push
+      - name: Configure Pages
+        uses: actions/configure-pages@v5
+
+      - name: Upload Pages artifact
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: .
+
+  deploy:
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    runs-on: ubuntu-latest
+    needs: build
+
+    steps:
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4
