@@ -1,0 +1,32 @@
+# OS generated files
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+Desktop.ini
+
+# Editor directories and files
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+.project
+.classpath
+.settings/
+
+# Logs
+*.log
+npm-debug.log*
+
+# Optional: Cache directories
+.cache/
+
+# Optional: Build directories (현재는 빌드가 없지만, 나중을 위해)
+dist/
+build/
+
+# Content JSON and generated portfolio data are version-controlled.

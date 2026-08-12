@@ -1,0 +1,711 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- ==========================================
+         📝 수정 가이드
+         ==========================================
+         1. 프로필 정보: 라인 85-87, 129-137 (이름, 직위, 소개)
+         2. 프로필 사진: 라인 80, 125 (이미지 경로)
+         3. 소셜 링크: 라인 95-114, 142-160 (GitHub, LinkedIn 등)
+         4. About Me: 라인 181-189
+         5. News: 라인 200-215 (날짜와 내용 추가/삭제)
+         6. Publications: 라인 226-295 (논문 항목 추가/삭제)
+         7. Education: 라인 306-334 (학력 항목 추가/삭제)
+         8. Contact: 라인 344-357 (연락처 정보)
+         9. 저작권: 라인 166, 366 (이름과 연도)
+    ========================================== -->
+
+    <!-- TODO: 페이지 제목 수정 -->
+    <title>Academic Portfolio</title>
+
+    <!-- Tailwind CSS CDN - 수정 불필요 -->
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <!-- FontAwesome CDN - 수정 불필요 -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <!-- Google Fonts - Roboto - 수정 불필요 (다른 폰트 원하면 변경 가능) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <script data-goatcounter="https://dslim42.goatcounter.com/count" async src="//gc.zgo.at/count.js"></script>
+
+    <!-- ==========================================
+         스타일 정의 (CSS)
+         ========================================== -->
+    <style>
+        /* 기본 폰트 설정 - 수정 불필요 */
+        * {
+            font-family: 'Roboto', sans-serif;
+        }
+
+        /* ========== 포인트 컬러 설정 ========== */
+        /* TODO: 포인트 컬러 변경하려면 아래 색상 코드 수정 */
+        /* 현재: 다크 블루 (#2b6cb0) */
+        /* 예시: #1e40af (다크 블루), #059669 (그린), #dc2626 (레드) 등 */
+        :root {
+            --primary-color: #2b6cb0;
+            /* TODO: 메인 컬러 수정 */
+            --primary-hover: #2c5282;
+            /* TODO: 호버 시 컬러 수정 */
+        }
+
+        /* 스무스 스크롤 - 수정 불필요 */
+        html {
+            scroll-behavior: smooth;
+        }
+
+        /* 사이드바 고정 (데스크탑) - 수정 불필요 */
+        @media (min-width: 768px) {
+            .sidebar-fixed {
+                position: fixed;
+                top: 0;
+                left: 0;
+                height: 100vh;
+                overflow-y: auto;
+            }
+        }
+
+        /* 모바일 메뉴 토글 애니메이션 - 수정 불필요 */
+        .mobile-menu {
+            transition: max-height 0.3s ease-out;
+        }
+
+        /* 링크 호버 효과 - 수정 불필요 (컬러는 위의 :root에서 변경) */
+        .link-hover {
+            transition: color 0.2s ease;
+        }
+
+        .link-hover:hover {
+            color: var(--primary-color);
+        }
+
+        /* 섹션 구분선 - 수정 불필요 (색상이나 여백 조정 가능) */
+        .section-divider {
+            border-top: 1px solid #e5e7eb;
+            /* TODO: 구분선 색상 변경 가능 */
+            margin: 3rem 0;
+            /* TODO: 위아래 여백 조정 가능 */
+        }
+    </style>
+</head>
+
+<body class="bg-gray-50 text-gray-800">
+
+    <!-- 모바일 메뉴 토글 버튼 (모바일에서만 표시) -->
+    <div class="md:hidden bg-white shadow-md sticky top-0 z-50">
+        <button id="mobileMenuToggle" class="p-4 w-full text-left flex items-center justify-between">
+            <span class="font-semibold text-xl">Menu</span>
+            <i class="fas fa-bars text-gray-600"></i>
+        </button>
+        <div id="mobileMenu" class="hidden mobile-menu bg-white border-t border-gray-200">
+            <!-- 모바일 사이드바 내용 -->
+            <div class="p-6">
+                <!-- ========== 모바일 프로필 정보 (데스크탑 사이드바와 동일하게 수정) ========== -->
+
+                <!-- TODO: 프로필 사진 경로 변경 (assets/profile.jpg 또는 온라인 이미지 URL) -->
+                <div class="flex justify-center mb-4">
+                    <img src="assets/260105-Profile-Damsub%20Lim.jpg" alt="Profile"
+                        class="w-32 h-32 rounded-full object-cover border-4 border-gray-200">
+                </div>
+
+                <!-- Name -->
+                <h1 class="text-2xl font-bold text-center mb-2">
+                    <span class="lang-en">Damsub Lim</span>
+                    <span class="lang-ko" style="display: none;">임담섭</span>
+                </h1>
+
+                <!-- Position -->
+                <p class="text-center text-gray-600 mb-4">
+                    <span class="lang-en">PostDoc Researcher at KADA, Konkuk Univ.</span>
+                    <span class="lang-ko" style="display: none;">건국대학교 KADA 박사후연구원</span>
+                </p>
+
+                <!-- Bio -->
+                <p class="text-center text-sm text-gray-600 mb-6">
+                    <span class="lang-en">Research interests in Distributed Systems and Performance Reliability</span>
+                    <span class="lang-ko" style="display: none;">관심분야: 분산 시스템 및 성능 신뢰성</span>
+                </p>
+
+                <!-- TODO: 소셜 링크 URL 수정 (필요 없는 링크는 전체 <a> 태그 삭제) -->
+                <div class="flex justify-center space-x-4 mb-6">
+                    <!-- GitHub - TODO: yourusername을 실제 GitHub 사용자명으로 변경 -->
+                    <a href="https://github.com/miaow89" target="_blank"
+                        class="text-gray-600 hover:text-[#2b6cb0] transition-colors" title="GitHub">
+                        <i class="fab fa-github text-2xl"></i>
+                    </a>
+                    <!-- LinkedIn - TODO: yourusername을 실제 LinkedIn 사용자명으로 변경 -->
+                    <a href="https://linkedin.com/in/yourusername" target="_blank"
+                        class="text-gray-600 hover:text-[#2b6cb0] transition-colors" title="LinkedIn">
+                        <i class="fab fa-linkedin text-2xl"></i>
+                    </a>
+                    <!-- Google Scholar - TODO: YOUR_ID를 실제 Google Scholar ID로 변경 -->
+                    <a href="https://scholar.google.com/citations?view_op=list_works&hl=ko&hl=ko&user=C5-jvk8AAAAJ"
+                        target="_blank" class="text-gray-600 hover:text-[#2b6cb0] transition-colors"
+                        title="Google Scholar">
+                        <i class="fas fa-graduation-cap text-2xl"></i>
+                    </a>
+                    <!-- Email - TODO: 이메일 주소 변경 -->
+                    <!-- Email -->
+                    <button onclick="copyToClipboard('miaow89@konkuk.ac.kr')"
+                        class="text-gray-600 hover:text-[#2b6cb0] transition-colors focus:outline-none"
+                        title="Copy Email">
+                        <i class="fas fa-envelope text-2xl"></i>
+                    </button>
+                    <!-- 추가 소셜 링크가 필요하면 여기에 복사해서 추가 (예: Twitter, Instagram 등) -->
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="flex flex-col md:flex-row">
+        <!-- ==========================================
+             좌측 사이드바 (데스크탑 전용)
+             모바일에서는 상단 헤더로 표시됨
+             ========================================== -->
+        <aside class="w-full md:w-80 bg-white shadow-lg sidebar-fixed hidden md:block">
+            <div class="p-8">
+                <!-- ========== 프로필 사진 ========== -->
+                <!-- TODO: 프로필 사진 경로 변경 (assets/profile.jpg 또는 온라인 이미지 URL) -->
+                <div class="flex justify-center mb-6">
+                    <img src="assets/260105-Profile-Damsub%20Lim.jpg" alt="Profile"
+                        class="w-48 h-48 rounded-full object-cover border-4 border-gray-200 shadow-md">
+                </div>
+
+                <!-- ========== 이름 ========== -->
+                <!-- TODO: 이름 수정 (모바일 사이드바 라인 84와 동일하게) -->
+                <!-- ========== Name ========== -->
+                <h1 class="text-3xl font-bold text-center mb-3">
+                    <span class="lang-en">Damsub Lim</span>
+                    <span class="lang-ko" style="display: none;">임담섭</span>
+                </h1>
+
+                <!-- ========== Position ========== -->
+                <p class="text-center text-gray-600 mb-4">
+                    <span class="lang-en">PostDoc Researcher at KADA, Konkuk Univ.</span>
+                    <span class="lang-ko" style="display: none;">건국대학교 KADA 박사후연구원</span>
+                </p>
+
+                <!-- ========== Bio ========== -->
+                <p class="text-center text-sm text-gray-600 mb-8 leading-relaxed">
+                    <span class="lang-en">Research interests in Distributed Systems and Performance Reliability</span>
+                    <span class="lang-ko" style="display: none;">관심분야: 분산 시스템 및 성능 신뢰성</span>
+                </p>
+
+                <!-- ========== 소셜 링크 아이콘 ========== -->
+                <!-- TODO: 각 링크의 URL 수정 (모바일 사이드바 라인 95-114와 동일하게) -->
+                <!-- 필요한 링크만 남기고 나머지는 삭제 가능 -->
+                <div class="flex justify-center space-x-4 mb-8">
+                    <!-- GitHub -->
+                    <a href="https://github.com/yourusername" target="_blank"
+                        class="text-gray-600 hover:text-[#2b6cb0] transition-colors" title="GitHub">
+                        <i class="fab fa-github text-2xl"></i>
+                    </a>
+                    <!-- LinkedIn 
+                    <a href="https://linkedin.com/in/yourusername" target="_blank" class="text-gray-600 hover:text-[#2b6cb0] transition-colors" title="LinkedIn">
+                        <i class="fab fa-linkedin text-2xl"></i>
+                    </a>-->
+                    <!-- Google Scholar -->
+                    <a href="https://scholar.google.com/citations?user=C5-jvk8AAAAJ&hl=ko" target="_blank"
+                        class="text-gray-600 hover:text-[#2b6cb0] transition-colors" title="Google Scholar">
+                        <i class="fas fa-graduation-cap text-2xl"></i>
+                    </a>
+                    <!-- Email -->
+                    <!-- Email -->
+                    <button onclick="copyToClipboard('miaow89@konkuk.ac.kr')"
+                        class="text-gray-600 hover:text-[#2b6cb0] transition-colors focus:outline-none"
+                        title="Copy Email">
+                        <i class="fas fa-envelope text-2xl"></i>
+                    </button>
+                    <!-- CV Download -->
+                    <!-- 추가 소셜 링크: Twitter, Instagram, ResearchGate 등 필요한 경우 복사해서 추가 -->
+                </div>
+
+                <!-- ========== 저작권 문구 ========== -->
+                <!-- TODO: 이름과 연도 수정 (모바일 Footer 라인 366과 동일하게) -->
+                <div class="mt-auto pt-8 border-t border-gray-200">
+                    <p class="text-xs text-center text-gray-500">
+                        © 2026 Damsub Lim. All rights reserved.
+                    </p>
+                </div>
+            </div>
+        </aside>
+
+        <!-- ==========================================
+             우측 메인 콘텐츠 영역
+             ========================================== -->
+        <main class="flex-1 md:ml-80 min-h-screen">
+            <div class="max-w-4xl mx-auto px-6 md:px-12 py-8 md:py-12 relative">
+
+                <!-- Language Toggle Button -->
+                <button id="langToggle"
+                    class="absolute top-8 right-6 md:right-12 bg-white border border-gray-300 hover:bg-gray-50 text-gray-700 px-3 py-1 rounded-md text-sm font-medium transition-colors shadow-sm flex items-center">
+                    <i class="fas fa-globe mr-2 text-gray-400"></i>
+                    <span>KO</span>
+                </button>
+
+                <!-- ==========================================
+                     About Me 섹션 - 자기소개
+                     ========================================== -->
+                <section id="about" class="mb-12 pt-4">
+                    <h2 class="text-3xl font-bold text-[#2b6cb0] mb-6">About Me</h2>
+
+                    <!-- English Content -->
+                    <div class="lang-en prose max-w-none text-gray-700 leading-relaxed">
+                        <p class="mb-4">
+                            I am currently a PostDoc at <a href="https://sites.google.com/view/kadalab/home"
+                                target="_blank" class="text-[#2b6cb0] hover:underline">KADA</a> at Konkuk University. I
+                            received my Ph.D. in Engineering from the <a href="https://dms.konkuk.ac.kr/"
+                                target="_blank" class="text-[#2b6cb0] hover:underline">DMS Laboratory</a> at Konkuk
+                            University under the advices of Professor Dugki Min. Post-graduation, I maintain a strong
+                            collaborative relationship with the lab to further deepen my research and create synergistic
+                            outcomes.
+                        </p>
+                        <p class="mb-4">
+                            I also continue to collaborate with Professor <a
+                                href="https://scholar.google.com/citations?user=q6gCa4cAAAAJ&hl=en" target="_blank"
+                                class="text-[#2b6cb0] hover:underline">Tuan Anh Nguyen</a> of HUIT in Vietnam, a former
+                            senior member of the DMS Laboratory, and we are deriving research results on various topics.
+                        </p>
+                        <p class="mb-4">
+                            My research interests in <strong>analyzing and modeling various systems to ensure
+                                reliability and stability</strong>. I am actively engaged in research on Distributed
+                            Systems, Cloud Computing, IoT and SDN, as well as the Performance, Availability, and
+                            Dependability Evaluation of Computer and Storage Systems.
+                        </p>
+                    </div>
+
+                    <!-- Korean Content (Hidden by default) -->
+                    <div class="lang-ko prose max-w-none text-gray-700 leading-relaxed" style="display: none;">
+                        <p class="mb-4">
+                            저는 현재 건국대학교 <a href="https://sites.google.com/view/kadalab/home" target="_blank"
+                                class="text-[#2b6cb0] hover:underline">KADA</a>에서 PostDoc으로 재직중입니다. 건국대학교 <a
+                                href="https://dms.konkuk.ac.kr/" target="_blank"
+                                class="text-[#2b6cb0] hover:underline">DMS 연구실</a>에서 민덕기 교수님의 지도 아래 공학 박사 학위를 취득하였으며, 박사
+                            취득 후에도 계속 연구실과의 유기적인 협업 체계를 지속함으로써 연구의 깊이를 더하고 시너지를 창출하고 있습니다.
+                        </p>
+                        <p class="mb-4">
+                            <a href="https://dms.konkuk.ac.kr/" target="_blank"
+                                class="text-[#2b6cb0] hover:underline">DMS 연구실</a>의 선배였던, 현재는 베트남의 HUIT의 <a
+                                href="https://scholar.google.com/citations?user=q6gCa4cAAAAJ&hl=en" target="_blank"
+                                class="text-[#2b6cb0] hover:underline">Tuan Anh Nguyen</a> 교수와 연구 협업을 지속하고 있으며, 다양한 주제에
+                            대한 연구 결과를 도출하고 있습니다.
+                        </p>
+                        <p class="mb-4">
+                            제 연구 관심사는 <strong>다양한 시스템을 분석하고 모델링하여 신뢰성과 안정성을 확보</strong>하는 데에 있으며, Distributed System,
+                            Cloud Computing, IoT and SDN, Performance, Availability and Dependability Evaluation of
+                            Computer and Storages Systems와 같은 최신 기술을 적극적으로 연구하고 있습니다.
+                        </p>
+                    </div>
+                </section>
+
+                <div class="section-divider"></div>
+
+                <!-- ==========================================
+                     News 섹션 - 최신 소식
+                     날짜순으로 정렬 (최신순)
+                     ========================================== -->
+                <section id="research-interests" class="mb-12">
+                    <h2 class="text-3xl font-bold text-[#2b6cb0] mb-6">Research Interests</h2>
+
+                    <!-- English Content -->
+                    <ul class="lang-en list-disc list-inside space-y-3 text-gray-700 text-lg">
+                        <li>
+                            <span class="font-semibold text-gray-900">Performance, Availability, and Dependability
+                                Evaluation</span>
+                            <p class="text-base text-gray-600 ml-6 mt-1 mb-2">Modeling and analysis of computer and
+                                storage systems using SRN and Petri Nets.</p>
+                        </li>
+                        <li>
+                            <span class="font-semibold text-gray-900">Agentic AI Framework</span>
+                            <p class="text-base text-gray-600 ml-6 mt-1 mb-2">Development of intelligent multi-agent
+                                frameworks for autonomous system management.</p>
+                        </li>
+                        <li>
+                            <span class="font-semibold text-gray-900">Distributed Systems</span>
+                            <p class="text-base text-gray-600 ml-6 mt-1 mb-2">Research on large-scale distributed
+                                architectures and storage systems.</p>
+                        </li>
+                        <li>
+                            <span class="font-semibold text-gray-900">Cloud Computing</span>
+                            <p class="text-base text-gray-600 ml-6 mt-1 mb-2">Optimization of cloud infrastructure,
+                                auto-scaling, and resource management.</p>
+                        </li>
+                        <li>
+                            <span class="font-semibold text-gray-900">IoT and SDN</span>
+                            <p class="text-base text-gray-600 ml-6 mt-1">Integration of Internet of Things with
+                                Software-Defined Networking.</p>
+                        </li>
+                    </ul>
+
+                    <!-- Korean Content (Hidden by default) -->
+                    <ul class="lang-ko list-disc list-inside space-y-3 text-gray-700 text-lg" style="display: none;">
+                        <li>
+                            <span class="font-semibold text-gray-900">성능, 가용성 및 신뢰성 평가 (Evaluation)</span>
+                            <p class="text-base text-gray-600 ml-6 mt-1 mb-2">SRN 및 Petri Nets를 활용한 컴퓨터/스토리지 시스템 분석 및
+                                모델링.</p>
+                        </li>
+                        <li>
+                            <span class="font-semibold text-gray-900">에이전틱 AI 프레임워크 (Agentic AI Framework)</span>
+                            <p class="text-base text-gray-600 ml-6 mt-1 mb-2">자율 시스템 관리를 위한 지능형 멀티 에이전트 프레임워크 개발.</p>
+                        </li>
+                        <li>
+                            <span class="font-semibold text-gray-900">분산 시스템 (Distributed Systems)</span>
+                            <p class="text-base text-gray-600 ml-6 mt-1 mb-2">대규모 분산 아키텍처 및 스토리지 시스템 연구.</p>
+                        </li>
+                        <li>
+                            <span class="font-semibold text-gray-900">클라우드 컴퓨팅 (Cloud Computing)</span>
+                            <p class="text-base text-gray-600 ml-6 mt-1 mb-2">클라우드 인프라 최적화, 오토스케일링 및 자원 관리.</p>
+                        </li>
+                        <li>
+                            <span class="font-semibold text-gray-900">IoT 및 SDN</span>
+                            <p class="text-base text-gray-600 ml-6 mt-1">사물인터넷(IoT)과 소프트웨어 정의 네트워크(SDN)의 융합 연구.</p>
+                        </li>
+                    </ul>
+                </section>
+
+                <div class="section-divider"></div>
+
+                <!-- ==========================================
+                     Publications 섹션 - 논문/프로젝트 목록
+                     content/publications.json 파일에서 자동으로 로드됨
+                     ========================================== -->
+                <!-- Publication data is generated from content/*.json into generated/portfolio-data.js. -->
+                <section id="publications" class="mb-12">
+                    <div class="mb-6 flex items-center justify-between gap-4">
+                        <h2 class="text-3xl font-bold text-[#2b6cb0]">Publications</h2>
+                        <div id="publications-manuscript-toggle" class="shrink-0"></div>
+                    </div>
+                    <!-- 
+                        논문 목록은 content/publications.json에서 자동으로 렌더링됩니다.
+                        새 논문을 추가하려면 content/publications.json을 수정하세요.
+                    -->
+                    <div id="publications-container" class="space-y-12">
+                        <!-- International Section -->
+                        <div id="publications-international-section">
+                            <button
+                                class="w-full flex justify-between items-center text-2xl font-semibold text-gray-800 mb-6 border-b pb-2 focus:outline-none hover:text-[#2b6cb0] transition-colors"
+                                onclick="toggleSection('publications-international-list', this)">
+                                <span>International Journal/Conference Papers</span>
+                                <i class="fas fa-chevron-up transition-transform duration-200"></i>
+                            </button>
+                            <div id="publications-international-list"
+                                class="space-y-6 transition-all duration-300 origin-top">
+                                <div class="text-center text-gray-500 py-4">
+                                    <i class="fas fa-spinner fa-spin mr-2"></i> Loading...
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Domestic Section -->
+                        <div id="publications-domestic-section">
+                            <button
+                                class="w-full flex justify-between items-center text-2xl font-semibold text-gray-800 mb-6 border-b pb-2 focus:outline-none hover:text-[#2b6cb0] transition-colors"
+                                onclick="toggleSection('publications-domestic-list', this)">
+                                <span>Domestic Journal/Conference Papers</span>
+                                <i class="fas fa-chevron-up transition-transform duration-200"></i>
+                            </button>
+                            <div id="publications-domestic-list"
+                                class="space-y-6 transition-all duration-300 origin-top">
+                                <div class="text-center text-gray-500 py-4">
+                                    <i class="fas fa-spinner fa-spin mr-2"></i> Loading...
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <div class="section-divider"></div>
+
+                <section id="research-projects" class="mb-12">
+                    <h2 class="text-3xl font-bold text-[#2b6cb0] mb-6">Research Projects</h2>
+                    <div id="research-projects-list" class="space-y-6"></div>
+                </section>
+
+                <div class="section-divider"></div>
+
+                <!-- ==========================================
+                     Education 섹션 - 학력 사항
+                     ========================================== -->
+                <section id="education" class="mb-12">
+                    <h2 class="text-3xl font-bold text-[#2b6cb0] mb-6">Education / Experience</h2>
+                    <div class="space-y-6">
+                        <!-- ========== Experience Item 1 ========== -->
+                        <div class="flex flex-col md:flex-row md:items-start">
+                            <div class="md:w-32 text-gray-500 text-sm font-medium mb-2 md:mb-0">2025.12 - Current</div>
+                            <div class="flex-1">
+                                <h3 class="text-xl font-semibold mb-1">PostDoc Researcher</h3>
+                                <p class="text-gray-600 mb-1">Konkuk Aerospace Design·Airworthiness Institute (KADA)</p>
+                                <p class="text-gray-600 mb-1">Konkuk University</p>
+                            </div>
+                        </div>
+
+                        <!-- ========== Education Item 1 ========== -->
+                        <div class="flex flex-col md:flex-row md:items-start">
+                            <!-- TODO: 기간 수정 (예: "2020 - 현재", "2018 - 2020") -->
+                            <div class="md:w-32 text-gray-500 text-sm font-medium mb-2 md:mb-0">2025</div>
+                            <div class="flex-1">
+                                <h3 class="text-xl font-semibold mb-1">Ph.D. in Engineering</h3>
+                                <p class="text-gray-600 mb-1">Konkuk University</p>
+                                <p class="text-sm text-gray-500">Advisor: Prof. Dugki Min</p>
+                                <p class="text-sm text-gray-500 mt-2">Thesis: "SRN Analysis Modeling and Simulation for
+                                    Auto Scalable Ceph Controller"</p>
+                            </div>
+                        </div>
+
+                        <!-- ========== 학력 항목 2 ========== -->
+                        <!-- TODO: 항목 1과 동일하게 수정 -->
+                        <div class="flex flex-col md:flex-row md:items-start">
+                            <div class="md:w-32 text-gray-500 text-sm font-medium mb-2 md:mb-0">2015</div>
+                            <div class="flex-1">
+                                <h3 class="text-xl font-semibold mb-1">MS in Computer Science</h3>
+                                <p class="text-gray-600 mb-1">Konkuk University</p>
+                                <p class="text-sm text-gray-500 mt-2">Thesis: "Profile-Extensible ROHC Engine for
+                                    improving Network Transmission Efficiency"</p>
+                                <!-- TODO: GPA 수정 (필요없으면 삭제) 
+                                <p class="text-sm text-gray-500">GPA: 4.0/4.0</p>-->
+                            </div>
+                        </div>
+
+                        <!-- ========== 학력 항목 3 ========== -->
+                        <!-- TODO: 항목 1과 동일하게 수정 
+                        <div class="flex flex-col md:flex-row md:items-start">
+                            <div class="md:w-32 text-gray-500 text-sm font-medium mb-2 md:mb-0">2014 - 2018</div>
+                        <div class="flex-1">
+                                <h3 class="text-xl font-semibold mb-1">BS in Computer Science</h3>
+                                <p class="text-gray-600 mb-1">OO University</p>
+                                TODO: 수상 내역 등 수정 (필요없으면 삭제) 
+                                <p class="text-sm text-gray-500">Summa Cum Laude</p>
+                            </div>
+                        </div>-->
+
+                        <!-- 새 학력 항목 추가: 아래 형식 복사해서 위에 추가
+                        <div class="flex flex-col md:flex-row md:items-start">
+                            <div class="md:w-32 text-gray-500 text-sm font-medium mb-2 md:mb-0">YYYY - YYYY</div>
+                            <div class="flex-1">
+                                <h3 class="text-xl font-semibold mb-1">학위명</h3>
+                                <p class="text-gray-600 mb-1">학교명</p>
+                                <p class="text-sm text-gray-500">추가 정보 (GPA, 수상 내역 등)</p>
+                    </div>
+                        </div>
+                        -->
+                    </div>
+                </section>
+
+                <div class="section-divider"></div>
+
+                <!-- ==========================================
+                     Contact 섹션 - 연락처 정보
+                     ========================================== -->
+                <section id="contact" class="mb-12">
+                    <h2 class="text-3xl font-bold text-[#2b6cb0] mb-6">Contact</h2>
+                    <div class="space-y-4 text-gray-700">
+                        <!-- TODO: 이메일 주소 수정 -->
+                        <p class="flex items-center">
+                            <i class="fas fa-envelope mr-3 text-[#2b6cb0] w-5"></i>
+                            <button onclick="copyToClipboard('miaow89@konkuk.ac.kr')"
+                                class="link-hover hover:underline text-left">miaow89 [at] konkuk.ac.kr</button>
+                        </p>
+
+                        <!-- TODO: 주소 정보 수정 (필요없으면 삭제) -->
+                        <p class="flex items-center">
+                            <i class="fas fa-map-marker-alt mr-3 text-[#2b6cb0] w-5"></i>
+                            <span>Konkuk University, Seoul, Korea</span>
+                        </p>
+
+                        <!-- TODO: 전화번호 수정 (필요없으면 삭제) 
+                        <p class="flex items-center">
+                            <i class="fas fa-phone mr-3 text-[#2b6cb0] w-5"></i>
+                            <span>+82-XX-XXXX-XXXX</span>
+                        </p>-->
+
+                        <!-- 추가 연락처 정보 (예: ResearchGate, ORCID 등)
+                        <p class="flex items-center">
+                            <i class="fas fa-link mr-3 text-[#2b6cb0] w-5"></i>
+                            <a href="https://..." target="_blank" class="link-hover">ResearchGate Profile</a>
+                        </p>
+                        -->
+                    </div>
+                </section>
+
+            </div>
+
+            <!-- ==========================================
+                 모바일 Footer (저작권 문구)
+                 ========================================== -->
+            <!-- TODO: 이름과 연도 수정 (데스크탑 사이드바 라인 166과 동일하게) -->
+            <footer class="md:hidden bg-white border-t border-gray-200 py-6 px-6">
+                <p class="text-xs text-center text-gray-500">
+                    © 2026 Damsub Lim. All rights reserved.
+                </p>
+            </footer>
+        </main>
+    </div>
+
+    <!-- ==========================================
+         JavaScript (모바일 메뉴 토글 기능)
+         ========================================== -->
+    <script src="generated/portfolio-data.js"></script>
+    <script>
+        // ==========================================
+        // 유틸리티함수: 보안 (XSS 방지)
+        // ==========================================
+        function escapeHtml(text) {
+            if (!text) return text;
+            if (typeof text !== 'string') return String(text);
+            return text
+                .replace(/&/g, "&amp;")
+                .replace(/</g, "&lt;")
+                .replace(/>/g, "&gt;")
+                .replace(/"/g, "&quot;")
+                .replace(/'/g, "&#039;");
+        }
+
+        // 이메일/연락처 복사 버튼에서 공통으로 사용하는 유틸리티입니다.
+        async function copyToClipboard(text) {
+            try {
+                if (navigator.clipboard && window.isSecureContext) {
+                    await navigator.clipboard.writeText(text);
+                } else {
+                    const tempInput = document.createElement('textarea');
+                    tempInput.value = text;
+                    tempInput.setAttribute('readonly', '');
+                    tempInput.style.position = 'absolute';
+                    tempInput.style.left = '-9999px';
+                    document.body.appendChild(tempInput);
+                    tempInput.select();
+                    document.execCommand('copy');
+                    document.body.removeChild(tempInput);
+                }
+
+                alert(`Copied: ${text}`);
+            } catch (error) {
+                console.error('Failed to copy text:', error);
+                alert('Failed to copy. Please copy manually.');
+            }
+        }
+
+        // ========== 모바일 메뉴 토글 기능 ==========
+        // 모바일에서 메뉴 버튼을 클릭하면 사이드바가 나타나거나 사라지는 기능
+
+        document.getElementById('mobileMenuToggle').addEventListener('click', function () {
+            const menu = document.getElementById('mobileMenu');
+            const icon = this.querySelector('i');
+
+            if (menu.classList.contains('hidden')) {
+                menu.classList.remove('hidden');
+                icon.classList.remove('fa-bars');
+                icon.classList.add('fa-times');
+            } else {
+                menu.classList.add('hidden');
+                icon.classList.remove('fa-times');
+                icon.classList.add('fa-bars');
+            }
+        });
+
+        // ==========================================
+        // 언어 전환 기능 (EN/KO)
+        // ==========================================
+        // ==========================================
+        // 언어 전환 기능 (EN/KO)
+        // ==========================================
+        const langToggleBtn = document.getElementById('langToggle');
+
+        // 사용자 언어 감지 (기본값 설정)
+        const userLang = navigator.language || navigator.userLanguage || 'en';
+        let currentLang = userLang.toLowerCase().startsWith('ko') ? 'ko' : 'en';
+
+        // 초기 언어 설정 함수
+        function setLanguage(lang) {
+            currentLang = lang;
+
+            // 버튼 텍스트 변경
+            const langText = langToggleBtn ? langToggleBtn.querySelector('span') : null;
+            if (langText) {
+                // 현재 상태가 보여야 하므로, 버튼에는 '반대' 언어 옵션을 보여줄 수도 있고 '현재'를 보여줄 수도 있음.
+                // 기존 로직: 버튼 텍스트가 현재 언어와 반대되는 언어로 전환하기 위한 라벨링?
+                // 아니면 현재 상태 표시? 
+                // 기존: currentLang === 'en' ? 'KO' : 'EN' -> 이건 'Switch to KO' 의미였음.
+                langText.textContent = currentLang === 'en' ? 'KO' : 'EN';
+            }
+
+            // 콘텐츠 표시/숨김 처리
+            document.querySelectorAll('.lang-en').forEach(el => {
+                el.style.display = currentLang === 'en' ? 'block' : 'none';
+            });
+            document.querySelectorAll('.lang-ko').forEach(el => {
+                el.style.display = currentLang === 'ko' ? 'block' : 'none';
+            });
+        }
+
+        // 초기 실행
+        document.addEventListener('DOMContentLoaded', () => {
+            setLanguage(currentLang);
+            // loadPublications() is triggered by the script onload event below
+        });
+
+        if (langToggleBtn) {
+            langToggleBtn.addEventListener('click', function () {
+                // 언어 상태 변경 (토글)
+                const newLang = currentLang === 'en' ? 'ko' : 'en';
+                setLanguage(newLang);
+            });
+        }
+
+        // ==========================================
+        // 논문 목록 자동 렌더링 기능
+        // papers/papers.json 파일을 읽어서 Publications 섹션에 자동으로 표시
+        // BibTeX 파싱 기능 포함
+        // ==========================================
+
+        /**
+         * BibTeX 문자열을 파싱하여 논문 정보 객체로 변환
+         * @param {string} bibtex - BibTeX 문자열
+         * @param {string} yourName - 본인 이름 (bold 처리용, 선택사항)
+         * @returns {Object} 파싱된 논문 정보 객체
+         */
+        // Publication data is normalized during the build step.
+
+        // ==========================================
+
+        /**
+         * Publication 섹션 토글 기능
+         * @param {string} listId - 토글할 리스트 컨테이너 ID
+         * @param {HTMLElement} btn - 클릭된 버튼 요소
+         */
+        function toggleSection(listId, btn) {
+            const list = document.getElementById(listId);
+            const icon = btn.querySelector('i');
+
+            if (list.style.maxHeight === '0px' || list.classList.contains('hidden')) {
+                // 열기
+                list.classList.remove('hidden');
+                list.style.maxHeight = list.scrollHeight + "px";
+                icon.style.transform = "rotate(0deg)";
+            } else {
+                // 닫기
+                // 높이를 명시적으로 설정해야 transition이 작동함
+                list.style.maxHeight = list.scrollHeight + "px";
+                setTimeout(() => {
+                    list.style.maxHeight = '0px';
+                }, 10);
+                list.style.overflow = 'hidden';
+                icon.style.transform = "rotate(180deg)";
+            }
+        }
+
+        // Publications rendered 후 높이 재조정 등 필요할 수 있음
+        // 하지만 max-height: none 상태라면 상관없음. 초기엔 열려있어야 함.
+
+    </script>
+
+    <script src="scripts/portfolio-ui.js"></script>
+
+
+</body>
+
+</html>

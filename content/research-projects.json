@@ -1,0 +1,83 @@
+[
+  {
+    "period": "2020.06 - Current",
+    "funder": "National Research Foundation of Korea",
+    "funderKo": "한국연구재단(NRF)",
+    "title": "Artificial Intelligence Digital Twin Research for Smart Urban Air Mobility (UAM)",
+    "titleKo": "스마트 도심항공교통(UAM)을 위한 인공지능 디지털 트윈 연구",
+    "description": "Participated in research on AI digital-twin platforms, automated provisioning and operations-management service architecture, and reliability analysis for UAM digital-twin systems.",
+    "descriptionKo": "인공지능 디지털 트윈 플랫폼, 클라우드 기반 자동 프로비저닝 및 운영관리 서비스 아키텍처, 스마트 UAM 디지털 트윈 시스템의 안정성·신뢰성 분석 연구에 참여했습니다.",
+    "focus": "Digital twin · Cloud operations · System modeling and performance analysis",
+    "focusKo": "디지털 트윈 · 클라우드 운영 · 시스템 모델링 및 성능 분석",
+    "pi": "Prof. Jae-Woo Lee",
+    "piKo": "이재우 교수"
+  },
+  {
+    "period": "2021.09 - 2024.02",
+    "funder": "National Research Foundation of Korea",
+    "funderKo": "한국연구재단(NRF)",
+    "title": "Secure and Reliable Multi-Agent Public Safety Services for Disaster-Tolerant Smart Cities (i-MeC2)",
+    "titleKo": "재난 허용 스마트시티를 위한 안전·신뢰성 멀티에이전트 공공안전 서비스(i-MeC2)",
+    "description": "Participated in intelligent, self-provisioning edge-cloud platform R&D and in i-MeC2sim, a discrete-event and software-in-the-loop simulation platform.",
+    "descriptionKo": "지능형 자가 프로비저닝 엣지-클라우드 플랫폼 연구개발과 이산사건 시뮬레이션(DES)·Software-in-the-Loop Simulation(SILS) 기반 i-MeC2sim 연구에 참여했습니다.",
+    "focus": "Edge-cloud · Multi-agent services · DES/SILS simulation",
+    "focusKo": "엣지-클라우드 · 멀티에이전트 서비스 · DES/SILS 시뮬레이션",
+    "pi": "Prof. Dugki Min",
+    "piKo": "민덕기 교수"
+  },
+  {
+    "period": "2016.07 - 2021.12",
+    "funder": "Institute for Information & Communications Technology Planning & Evaluation (IITP)",
+    "funderKo": "정보통신기술진흥원(IITP)",
+    "title": "High-Performance Hybrid Cloud Computing Technologies for Knowledge Information Services",
+    "titleKo": "지식정보 서비스를 위한 고성능 하이브리드 클라우드 컴퓨팅 기술",
+    "description": "Participated in R&D on cloud-based intelligent broadcasting-production system application technologies.",
+    "descriptionKo": "클라우드 기반 지능형 방송제작 시스템의 응용기술 연구개발에 참여했습니다.",
+    "focus": "Hybrid cloud · Service applications",
+    "focusKo": "하이브리드 클라우드 · 서비스 응용기술"
+  },
+  {
+    "period": "2015.12 - 2016.11",
+    "funder": "Korea Technology & Information Promotion Agency for SMEs (TIPA)", 
+    "funderKo": "한국기술진흥원(TIPA)",
+    "title": "Secure Open IoT Gateway Platform for Industry",
+    "titleKo": "산업체를 위한 보안 강화 개방형 IoT 게이트웨이 플랫폼",
+    "description": "Contributed to IoT software-gateway R&D for flexible packet control, adaptive packet replication, and a real-time context-awareness framework based on complex-event processing.",
+    "descriptionKo": "유연한 IoT 패킷 제어, 목적지 변화에 대응하는 패킷 복제, 복합 이벤트 처리 기반 실시간 상황인지 프레임워크의 소프트웨어 게이트웨이 연구개발에 참여했습니다.",
+    "focus": "IoT gateway · Packet control · Complex-event processing",
+    "focusKo": "IoT 게이트웨이 · 패킷 제어 · 복합 이벤트 처리"
+  },
+  {
+    "period": "2016.05 - 2018.04",
+    "funder": "Korea Technology & Information Promotion Agency for SMEs (TIPA)",
+    "funderKo": "한국기술진흥원(TIPA)",
+    "title": "Smart Network Platform Development Combining SDN and NFV",
+    "titleKo": "SDN과 NFV가 융합된 스마트 네트워크 플랫폼 개발",
+    "description": "Participated in smart-network platform R&D using SDN and NFV, including SSL-based network-level security research.",
+    "descriptionKo": "SDN과 NFV를 활용한 스마트 네트워크 플랫폼 연구개발과 SSL 기반 네트워크 수준 보안 연구에 참여했습니다.",
+    "focus": "SDN · NFV · Network security",
+    "focusKo": "SDN · NFV · 네트워크 보안"
+  },
+  {
+    "period": "2015.09 - 2016.04",
+    "funder": "Korea Railroad Research Institute",
+    "funderKo": "한국철도기술연구원",
+    "title": "Standardization Design Support and LAB Verification Prototype for Real-Time Railway Safety-Control Protocols",
+    "titleKo": "실시간 철도안전 관제시스템 프로토콜 표준화 설계지원 및 LAB 검증환경 시작품 개발",
+    "description": "Supported data and QoS mapping between legacy protocols and the DDS standard, and developed a standards-based LAB verification prototype.",
+    "descriptionKo": "Legacy 프로토콜과 DDS 표준의 데이터·QoS 매핑을 지원하고, 표준 기반 LAB 검증 시작품 개발에 참여했습니다.",
+    "focus": "DDS · QoS mapping · Protocol interoperability",
+    "focusKo": "DDS · QoS 매핑 · 프로토콜 상호운용성"
+  },
+  {
+    "period": "2013.09 - 2014.08",
+    "funder": "National IT Industry Promotion Agency (NIPA)",
+    "funderKo": "정보통신산업진흥원(NIPA)",
+    "title": "Development of Smart Mobile Hot Spot Combining PacketNgin and Mobile Hot Spot",
+    "titleKo": "PacketNgin과 Mobile Hot Spot을 결합한 Smart Mobile Hot Spot 개발",
+    "description": "Acquired Deep Packet Inspection technology based on PacketNgin network-virtualization technology.",
+    "descriptionKo": "네트워크 가상화 기술인 PacketNgin을 기반으로 DPI(Deep Packet Inspection) 기술을 습득했습니다.",
+    "focus": "Network virtualization · DPI",
+    "focusKo": "네트워크 가상화 · DPI"
+  }
+]

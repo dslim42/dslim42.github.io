@@ -1,0 +1,253 @@
+{
+  "profile": {
+    "name": {
+      "en": "Damsub Lim",
+      "ko": "임담섭"
+    },
+    "photo": "assets/260105-Profile-Damsub%20Lim.jpg",
+    "position": {
+      "en": "PostDoc Researcher at KADA, Konkuk Univ.",
+      "ko": "건국대학교 KADA 박사후연구원"
+    },
+    "focus": {
+      "en": "Research interests in Distributed Systems and Performance Reliability",
+      "ko": "관심분야: 분산 시스템 및 성능 신뢰성"
+    },
+    "email": "miaow89@konkuk.ac.kr",
+    "emailDisplay": "miaow89 [at] konkuk.ac.kr",
+    "location": {
+      "en": "Konkuk University, Seoul, Korea",
+      "ko": "건국대학교, 서울, 대한민국"
+    },
+    "socialLinks": [
+      {
+        "label": "GitHub",
+        "icon": "fab fa-github",
+        "href": "https://github.com/dslim42"
+      },
+      {
+        "label": "Google Scholar",
+        "icon": "fas fa-graduation-cap",
+        "href": "https://scholar.google.com/citations?user=C5-jvk8AAAAJ&hl=ko"
+      }
+    ]
+  },
+  "about": [
+    {
+      "en": [
+        {
+          "text": "I am currently working as a postdoctoral researcher at "
+        },
+        {
+          "text": "KADA",
+          "href": "https://sites.google.com/view/kadalab/home"
+        },
+        {
+          "text": ", Konkuk University. I received my Ph.D. in Engineering from the "
+        },
+        {
+          "text": "DMS Laboratory",
+          "href": "https://dms.konkuk.ac.kr/"
+        },
+        {
+          "text": " at Konkuk University under the advices of Professor Dugki Min. Post-graduation, I maintain a strong collaborative relationship with the lab to further deepen my research and create synergistic outcomes."
+        }
+      ],
+      "ko": [
+        {
+          "text": "저는 현재 건국대학교 "
+        },
+        {
+          "text": "KADA",
+          "href": "https://sites.google.com/view/kadalab/home"
+        },
+        {
+          "text": "에서 PostDoc으로 재직중입니다. 건국대학교 "
+        },
+        {
+          "text": "DMS 연구실",
+          "href": "https://dms.konkuk.ac.kr/"
+        },
+        {
+          "text": "에서 민덕기 교수님의 지도 아래 공학 박사 학위를 취득하였으며, 박사 취득 후에도 계속 연구실과의 유기적인 협업 체계를 지속함으로써 연구의 깊이를 더하고 시너지를 창출하고 있습니다."
+        }
+      ]
+    },
+    {
+      "en": [
+        {
+          "text": "I also continue to collaborate with Professor "
+        },
+        {
+          "text": "Tuan Anh Nguyen",
+          "href": "https://scholar.google.com/citations?user=q6gCa4cAAAAJ&hl=en"
+        },
+        {
+          "text": " of HUIT in Vietnam, a former senior member of the DMS Laboratory, and we are deriving research results on various topics."
+        }
+      ],
+      "ko": [
+        {
+          "text": ""
+        },
+        {
+          "text": "DMS 연구실",
+          "href": "https://dms.konkuk.ac.kr/"
+        },
+        {
+          "text": "의 선배였던, 현재는 베트남의 HUIT의 "
+        },
+        {
+          "text": "Tuan Anh Nguyen",
+          "href": "https://scholar.google.com/citations?user=q6gCa4cAAAAJ&hl=en"
+        },
+        {
+          "text": " 교수와 연구 협업을 지속하고 있으며, 다양한 주제에 대한 연구 결과를 도출하고 있습니다."
+        }
+      ]
+    },
+    {
+      "en": [
+        {
+          "text": "My research interests in "
+        },
+        {
+          "text": "analyzing and modeling various systems to ensure reliability and stability",
+          "bold": true
+        },
+        {
+          "text": ". I am actively engaged in research on Distributed Systems, Cloud Computing, IoT and SDN, as well as the Performance, Availability, and Dependability Evaluation of Computer and Storage Systems."
+        }
+      ],
+      "ko": [
+        {
+          "text": "제 연구 관심사는 "
+        },
+        {
+          "text": "다양한 시스템을 분석하고 모델링하여 신뢰성과 안정성을 확보",
+          "bold": true
+        },
+        {
+          "text": "하는 데에 있으며, Distributed System, Cloud Computing, IoT and SDN, Performance, Availability and Dependability Evaluation of Computer and Storages Systems와 같은 최신 기술을 적극적으로 연구하고 있습니다."
+        }
+      ]
+    }
+  ],
+  "researchInterests": [
+    {
+      "en": {
+        "title": "Performance, Availability, and Dependability Evaluation",
+        "description": "Modeling and analysis of computer and storage systems using SRN and Petri Nets."
+      },
+      "ko": {
+        "title": "성능, 가용성 및 신뢰성 평가",
+        "description": "SRN과 Petri Nets를 활용한 컴퓨터·스토리지 시스템의 모델링 및 분석."
+      }
+    },
+    {
+      "en": {
+        "title": "Agentic AI Framework",
+        "description": "Development of intelligent multi-agent frameworks for autonomous system management."
+      },
+      "ko": {
+        "title": "에이전틱 AI 프레임워크",
+        "description": "자율 시스템 관리를 위한 지능형 멀티에이전트 프레임워크 개발."
+      }
+    },
+    {
+      "en": {
+        "title": "Distributed Systems",
+        "description": "Research on large-scale distributed architectures and storage systems."
+      },
+      "ko": {
+        "title": "분산 시스템",
+        "description": "대규모 분산 아키텍처와 스토리지 시스템 연구."
+      }
+    },
+    {
+      "en": {
+        "title": "Cloud Computing",
+        "description": "Optimization of cloud infrastructure, auto-scaling, and resource management."
+      },
+      "ko": {
+        "title": "클라우드 컴퓨팅",
+        "description": "클라우드 인프라 최적화, 오토스케일링 및 자원 관리."
+      }
+    },
+    {
+      "en": {
+        "title": "IoT and SDN",
+        "description": "Integration of the Internet of Things with Software-Defined Networking."
+      },
+      "ko": {
+        "title": "IoT 및 SDN",
+        "description": "사물인터넷과 소프트웨어 정의 네트워크의 융합 연구."
+      }
+    }
+  ],
+  "educationExperience": [
+    {
+      "period": "2025.12 - Current",
+      "en": {
+        "title": "PostDoc Researcher",
+        "organization": "Konkuk Aerospace Design & Airworthiness Institute (KADA)",
+        "details": [
+          "Konkuk University"
+        ]
+      },
+      "ko": {
+        "title": "박사후연구원",
+        "organization": "건국대학교 항공우주설계·인증 교책연구원(KADA)",
+        "details": [
+          "건국대학교"
+        ]
+      }
+    },
+    {
+      "period": "2025",
+      "en": {
+        "title": "Ph.D. in Computer Science",
+        "organization": "Konkuk University",
+        "details": [
+          "Advisor: Prof. Dugki Min",
+          "Thesis: \"SRN Analysis Modeling and Simulation for Auto Scalable Ceph Controller\""
+        ]
+      },
+      "ko": {
+        "title": "공학박사",
+        "organization": "건국대학교",
+        "details": [
+          "지도교수: 민덕기 교수",
+          "학위논문: \"SRN Analysis Modeling and Simulation for Auto Scalable Ceph Controller\""
+        ]
+      }
+    },
+    {
+      "period": "2015",
+      "en": {
+        "title": "M.S. in Computer Science",
+        "organization": "Konkuk University",
+        "details": [
+          "Advisor: Prof. Dugki Min",
+          "Thesis: \"Profile-Extensible ROHC Engine for Improving Network Transmission Efficiency\""
+        ]
+      },
+      "ko": {
+        "title": "공학석사",
+        "organization": "건국대학교",
+        "details": [
+          "지도교수: 민덕기 교수",
+          "학위논문: \"Profile-Extensible ROHC Engine for Improving Network Transmission Efficiency\""
+        ]
+      }
+    }
+  ],
+  "contact": {
+    "email": "miaow89@konkuk.ac.kr",
+    "emailDisplay": "miaow89 [at] konkuk.ac.kr",
+    "location": {
+      "en": "Konkuk University, Seoul, Korea",
+      "ko": "건국대학교, 서울, 대한민국"
+    }
+  }
+}

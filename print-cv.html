@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Print CV | Damsub Lim</title>
+    <style>
+        :root { color: #111; background: #f3f4f6; }
+        * { box-sizing: border-box; }
+        body { margin: 0; font-family: Arial, "Noto Sans KR", sans-serif; font-size: 9pt; line-height: 1.34; color: #111; }
+        .print-controls { max-width: 210mm; margin: 16px auto 0; display: flex; justify-content: flex-end; }
+        .print-controls button { border: 0; border-radius: 6px; background: #2b6cb0; color: #fff; padding: 9px 14px; cursor: pointer; font: inherit; font-weight: 700; }
+        main { width: 210mm; min-height: 297mm; margin: 16px auto; padding: 13mm; background: #fff; box-shadow: 0 1px 8px rgba(0,0,0,.15); }
+        .cv-header { display: flex; align-items: center; justify-content: space-between; gap: 12px; border-bottom: 2px solid #111; padding-bottom: 6px; margin-bottom: 11px; }
+        .cv-header h1 { font-size: 18pt; letter-spacing: .02em; margin: 0 0 2px; }
+        .cv-header p { margin: 0; color: #444; font-size: 9pt; }
+        .profile-photo { width: 26mm; height: 26mm; object-fit: cover; border-radius: 50%; border: 1px solid #999; }
+        section { margin: 0 0 9px; }
+        h2 { font-size: 12pt; margin: 0 0 5px; padding-bottom: 2px; border-bottom: 1px solid #777; }
+        h3 { font-size: 10pt; margin: 6px 0 3px; }
+        dl { margin: 0; }
+        .personal-row { display: grid; grid-template-columns: 35mm 1fr; gap: 5px; margin: 2px 0; }
+        dt { font-weight: 700; }
+        dd { margin: 0; }
+        .dated-item { display: grid; grid-template-columns: 23mm 1fr; gap: 6px; margin: 5px 0; }
+        .date { color: #333; font-weight: 700; }
+        .subline { margin: 2px 0 0; color: #333; }
+        .project { break-inside: avoid; page-break-inside: avoid; }
+        .publication-list, .detail-list, .activity-list { margin: 0; padding-left: 17px; }
+        .publication-list li, .detail-list li, .activity-list li { margin: 2px 0; }
+        .project { margin: 6px 0; }
+        .project-title { margin: 0 0 2px; font-weight: 700; }
+        .project-meta { margin: 0 0 2px; color: #333; font-size: 9pt; }
+        .footer-note { margin-top: 14px; border-top: 1px solid #aaa; padding-top: 4px; color: #666; font-size: 8pt; }
+        .error { color: #991b1b; padding: 12px; border: 1px solid #fecaca; background: #fef2f2; }
+        .loading { color: #555; text-align: center; padding: 30mm 0; }
+
+        @page { size: A4; margin: 13mm; }
+        @media print {
+            :root, body { background: #fff; }
+            .print-controls { display: none !important; }
+            main { width: auto; min-height: 0; margin: 0; padding: 0; box-shadow: none; }
+            a { color: inherit; text-decoration: none; }
+        }
+        @media screen and (max-width: 760px) {
+            main { width: 100%; min-height: auto; margin: 0; padding: 20px; box-shadow: none; }
+            .print-controls { margin: 12px 14px; }
+            .personal-row, .dated-item { grid-template-columns: 1fr; gap: 1px; margin-bottom: 8px; }
+        }
+    </style>
+</head>
+<body>
+    <div class="print-controls"><button id="printButton" type="button">Print / PDF</button></div>
+    <main id="cvDocument" aria-live="polite"><p class="loading">Preparing the current portfolio for printing...</p></main>
+
+    <script>
+        const query = new URLSearchParams(window.location.search);
+        const language = query.get('lang') === 'ko' ? 'ko' : 'en';
+        const labels = {
+            en: { title: 'Curriculum Vitae', personal: '1. Profile', education: '2. Education / Experience', publications: '3. Publications', projects: '4. Research Projects', activities: '5. Research Interests & Activities', position: 'Position', focus: 'Research Focus', email: 'E-mail', location: 'Location', period: 'Period', funder: 'Funder', pi: 'PI', keywords: 'Keywords', sourceNote: 'Generated from the current portfolio content at print time.' },
+            ko: { title: '이력서', personal: '1. Profile', education: '2. Education / Experience', publications: '3. Publications', projects: '4. Research Projects', activities: '5. Research Interests & Activities', position: '직위', focus: '연구 관심분야', email: '이메일', location: '소속', period: '기간', funder: '지원기관', pi: '연구책임자(PI)', keywords: 'Keywords', sourceNote: '현재 포트폴리오 화면의 내용을 인쇄 시점에 구성했습니다.' }
+        };
+
+        function escapeHtml(value) {
+            return String(value || '')
+                .replace(/&/g, '&amp;')
+                .replace(/</g, '&lt;')
+                .replace(/>/g, '&gt;')
+                .replace(/"/g, '&quot;')
+                .replace(/'/g, '&#039;');
+        }
+
+        function cleanText(element) {
+            return element ? element.textContent.replace(/\s+/g, ' ').trim() : '';
+        }
+
+        function hasContent(value) {
+            if (Array.isArray(value)) return value.length > 0;
+            return value !== undefined && value !== null && String(value).trim() !== '';
+        }
+
+        function localizedField(record, field, language) {
+            if (!record) return '';
+            const directValue = record[field];
+            if (directValue && typeof directValue === 'object' && !Array.isArray(directValue)) {
+                const values = language === 'ko'
+                    ? [directValue.ko, directValue.en]
+                    : [directValue.en, directValue.ko];
+                return values.find(hasContent) || '';
+            }
+            const english = [directValue, record.en?.[field]];
+            const korean = [record[`${field}Ko`], record.ko?.[field]];
+            return (language === 'ko' ? [...korean, ...english] : [...english, ...korean]).find(hasContent) || '';
+        }
+
+        function authorText(authors) {
+            if (Array.isArray(authors)) return authors.map(author => author.name || author).join(', ');
+            return String(authors || '');
+        }
+
+        function publicationBadge(paper, lang) {
+            const explicitGrade = localizedField(paper, 'journalGrade', lang);
+            if (explicitGrade) return `[${explicitGrade}] `;
+            if (paper.isSCI) {
+                const quality = ['SCI'];
+                if (paper.quartile) quality.push(paper.quartile);
+                if (paper.topPercent) quality.push(`Top ${paper.topPercent}%${paper.jcrYear ? `, JCR ${paper.jcrYear}` : ''}`);
+                return `[${quality.join(', ')}] `;
+            }
+            return paper.isKSCI ? '[KSCI] ' : '';
+        }
+
+        function renderPrintPaper(paper, lang) {
+            const doi = paper.links?.doi;
+            const doiUrl = doi ? (doi.startsWith('http') ? doi : `https://doi.org/${doi}`) : '';
+            const authors = authorText(localizedField(paper, 'authors', lang));
+            const authorLine = authors ? `<br>${escapeHtml(authors)}` : '';
+            const authorRole = localizedField(paper, 'authorRole', lang);
+            const authorRoleLine = !authors && authorRole ? `<br>${escapeHtml(`${lang === 'ko' ? '저자 역할' : 'Author Role'}: ${authorRole}`)}` : '';
+            return `<li><strong>${escapeHtml(`${publicationBadge(paper, lang)}${localizedField(paper, 'title', lang)}`)}</strong>${authorLine}${authorRoleLine}<br><em>${escapeHtml(localizedField(paper, 'venue', lang))}${paper.year ? ` (${escapeHtml(paper.year)})` : ''}</em>${doiUrl ? ` / <a href="${escapeHtml(doiUrl)}">${escapeHtml(doiUrl)}</a>` : ''}</li>`;
+        }
+
+        function renderCv(snapshot, lang) {
+            const text = labels[lang];
+            const personalRows = [
+                ['Name', snapshot.name],
+                [text.position, snapshot.position],
+                [text.focus, snapshot.focus],
+                [text.email, snapshot.email],
+                [text.location, snapshot.location],
+            ].filter(([, value]) => value).map(([term, value]) => `<div class="personal-row"><dt>${escapeHtml(term)}</dt><dd>${escapeHtml(value)}</dd></div>`).join('');
+            const education = snapshot.education.map(item => `<div class="dated-item"><div class="date">${escapeHtml(item.date)}</div><div><strong>${escapeHtml(item.title)}</strong>${item.details.map(detail => `<p class="subline">${escapeHtml(detail)}</p>`).join('')}</div></div>`).join('') || '<p>No education entries were found in the portfolio.</p>';
+            const sortedPapers = [...snapshot.papers];
+            const paperGroups = [
+                ['International Journal/Conference Papers', sortedPapers.filter(paper => paper.category === 'international')],
+                ['Domestic Journal/Conference Papers', sortedPapers.filter(paper => paper.category === 'domestic')],
+            ].map(([heading, papers]) => papers.length ? `<div class="publication-group"><h3>${heading}</h3><ol class="publication-list">${papers.map(paper => renderPrintPaper(paper, lang)).join('')}</ol></div>` : '').join('') || '<p>No publications were found in the portfolio.</p>';
+            const projects = snapshot.projects.map(project => {
+                const period = localizedField(project, 'period', lang);
+                const funder = localizedField(project, 'funder', lang);
+                const pi = localizedField(project, 'pi', lang);
+                const description = localizedField(project, 'description', lang);
+                const focus = localizedField(project, 'focus', lang);
+                const meta = [[text.period, period], [text.funder, funder], [text.pi, pi]].filter(([, value]) => hasContent(value));
+                const details = [
+                    description ? `<li>${escapeHtml(description)}</li>` : '',
+                    focus ? `<li><strong>${escapeHtml(text.keywords)}:</strong> ${escapeHtml(focus)}</li>` : ''
+                ].filter(Boolean);
+                return `<article class="project">${localizedField(project, 'title', lang) ? `<p class="project-title">${escapeHtml(localizedField(project, 'title', lang))}</p>` : ''}${meta.length ? `<p class="project-meta">${meta.map(([label, value]) => `<strong>${escapeHtml(label)}:</strong> ${escapeHtml(value)}`).join(' | ')}</p>` : ''}${details.length ? `<ul class="detail-list">${details.join('')}</ul>` : ''}</article>`;
+            }).join('') || '<p>No research projects were found in the portfolio.</p>';
+            const interests = snapshot.interests.map(item => `<li><strong>${escapeHtml(item.title)}</strong>${item.detail ? `: ${escapeHtml(item.detail)}` : ''}</li>`).join('') || '<li>No research-interest entries were found in the portfolio.</li>';
+
+            document.documentElement.lang = lang;
+            document.title = `${text.title} | ${snapshot.name || 'Portfolio'}`;
+            document.getElementById('printButton').textContent = lang === 'ko' ? '인쇄 / PDF 저장' : 'Print / PDF';
+            document.getElementById('cvDocument').innerHTML = `
+                <header class="cv-header"><div><h1>${text.title}</h1><p>${escapeHtml(snapshot.name)}</p></div><img class="profile-photo" src="${escapeHtml(snapshot.photo)}" alt="${escapeHtml(snapshot.name)}"></header>
+                <section><h2>${text.personal}</h2><dl>${personalRows}</dl></section>
+                <section><h2>${text.education}</h2>${education}</section>
+                <section><h2>${text.publications}</h2>${paperGroups}</section>
+                <section><h2>${text.projects}</h2>${projects}</section>
+                <section><h2>${text.activities}</h2><ul class="activity-list">${interests}</ul></section>
+                <p class="footer-note">${text.sourceNote}</p>`;
+        }
+
+        document.getElementById('printButton').addEventListener('click', () => window.print());
+        let receivedSnapshot = false;
+        window.addEventListener('message', event => {
+            if (event.data?.type !== 'portfolio-print-data' || !event.data.snapshot) return;
+            receivedSnapshot = true;
+            renderCv(event.data.snapshot, event.data.language === 'ko' ? 'ko' : language);
+            if (query.get('autoprint') === '1') window.setTimeout(() => window.print(), 200);
+        });
+
+        if (window.opener && !window.opener.closed) {
+            window.opener.postMessage({ type: 'portfolio-print-ready' }, '*');
+        }
+        window.setTimeout(() => {
+            if (!receivedSnapshot) {
+                document.getElementById('cvDocument').innerHTML = '<p class="error">The portfolio data could not be received. Close this tab and use the printer icon on the portfolio again.</p>';
+            }
+        }, 3000);
+    </script>
+</body>
+</html>
