@@ -431,7 +431,7 @@ window.portfolioData = {
         "submittedDate": "2026-05-20"
       },
       {
-        "id": "int1",
+        "id": "moving-target-defense-2026",
         "category": "international",
         "status": "published",
         "title": "Stochastic Petri Net Modeling and Evaluation of Moving Target Defense with Decoy Servers and IP Address Shuffling",
@@ -447,7 +447,7 @@ window.portfolioData = {
         "jcrYear": 2025
       },
       {
-        "id": "int2",
+        "id": "distributed-edge-storage-2026",
         "category": "international",
         "status": "published",
         "title": "Distributed Edge Storage Systems: Proactive High-Availability Microservices with Live Migration and Rejuvenation Strategies",
@@ -463,7 +463,7 @@ window.portfolioData = {
         "jcrYear": 2024
       },
       {
-        "id": "int3",
+        "id": "sinas-2026",
         "category": "international",
         "status": "published",
         "title": "S-iNAS: A Performance-Centric SRN Modeling and Analysis of Time and Event Based Scaling Strategies in Ceph-Based Industrial Network-Attached Storage",
@@ -479,7 +479,7 @@ window.portfolioData = {
         "jcrYear": 2024
       },
       {
-        "id": "int4",
+        "id": "metaverse-distributed-storages-2025",
         "category": "international",
         "status": "published",
         "title": "Metaverse Distributed Storages: High Availability Quantification using Stochastic Reward Nets",
@@ -490,7 +490,7 @@ window.portfolioData = {
         "isSCI": false
       },
       {
-        "id": "int5",
+        "id": "metaverse-cloud-edge-2025",
         "category": "international",
         "status": "published",
         "title": "Metaverse Cloud-Edge Computing: On Aging Dependability of a Cloud-Edge-in-the-loop Simulation Platform for AAM Vehicle Digital Twin",
@@ -501,7 +501,7 @@ window.portfolioData = {
         "isSCI": false
       },
       {
-        "id": "int6",
+        "id": "genesis-cloud-disaster-tolerance-2017",
         "category": "international",
         "status": "published",
         "title": "Model-Based Sensitivity of a Disaster Tolerant Active-Active GENESIS Cloud System",

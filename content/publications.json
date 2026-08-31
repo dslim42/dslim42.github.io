@@ -2,7 +2,7 @@
   "yourName": "Damsub Lim",
   "international": [
     {
-      "id": "int1",
+      "id": "moving-target-defense-2026",
       "isSCI": true,
       "quartile": "Q2",
       "topPercent": "37.6",
@@ -16,7 +16,7 @@
       }
     },
     {
-      "id": "int2",
+      "id": "distributed-edge-storage-2026",
       "isSCI": true,
       "quartile": "Q1",
       "topPercent": "6",
@@ -30,7 +30,7 @@
       }
     },
     {
-      "id": "int3",
+      "id": "sinas-2026",
       "isSCI": true,
       "quartile": "Q2",
       "topPercent": "31.2",
@@ -44,7 +44,7 @@
       }
     },
     {
-      "id": "int4",
+      "id": "metaverse-distributed-storages-2025",
       "isSCI": false,
       "title": "Metaverse Distributed Storages: High Availability Quantification using Stochastic Reward Nets",
       "authors": "D Lim, TA Nguyen, D Min, E Choi, I Fe, FA Silva, P Maciel",
@@ -52,7 +52,7 @@
       "year": 2025
     },
     {
-      "id": "int5",
+      "id": "metaverse-cloud-edge-2025",
       "isSCI": false,
       "title": "Metaverse Cloud-Edge Computing: On Aging Dependability of a Cloud-Edge-in-the-loop Simulation Platform for AAM Vehicle Digital Twin",
       "authors": "TA Nguyen, D Lim, S Nam, D Min, I Fe, FA Silva, P Maciel",
@@ -60,7 +60,7 @@
       "year": 2025
     },
     {
-      "id": "int6",
+      "id": "genesis-cloud-disaster-tolerance-2017",
       "isSCI": false,
       "title": "Model-Based Sensitivity of a Disaster Tolerant Active-Active GENESIS Cloud System",
       "authors": "TA Nguyen, X Rui, D Lim, J Oh, D Min, E Choi, TD Thang, NN Son",
