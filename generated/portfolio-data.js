@@ -431,56 +431,11 @@ window.portfolioData = {
         "submittedDate": "2026-05-20"
       },
       {
-        "id": "2026IEEEAccessMTD",
+        "id": "int1",
         "category": "international",
         "status": "published",
         "title": "Stochastic Petri Net Modeling and Evaluation of Moving Target Defense with Decoy Servers and IP Address Shuffling",
-        "authors": [
-          {
-            "name": "Lucas Santos",
-            "bold": false
-          },
-          {
-            "name": "Luis Guilherme Silva",
-            "bold": false
-          },
-          {
-            "name": "Melissa Alves",
-            "bold": false
-          },
-          {
-            "name": "Leonel Feitosa",
-            "bold": false
-          },
-          {
-            "name": "Jose Miqueias",
-            "bold": false
-          },
-          {
-            "name": "Lucas Lopes",
-            "bold": false
-          },
-          {
-            "name": "Paulo Rego",
-            "bold": false
-          },
-          {
-            "name": "Francisco Airton Silva",
-            "bold": false
-          },
-          {
-            "name": "Damsub Lim",
-            "bold": true
-          },
-          {
-            "name": "Dugki Min",
-            "bold": false
-          },
-          {
-            "name": "Tuan Anh Nguyen",
-            "bold": false
-          }
-        ],
+        "authors": "L Santos, LG Silva, M Alves, L Feitosa, J Miqueias, L Lopes, P Rego, FA Silva, D Lim, D Min, TA Nguyen",
         "venue": "IEEE Access",
         "year": 2026,
         "links": {
@@ -492,29 +447,12 @@ window.portfolioData = {
         "jcrYear": 2025
       },
       {
-        "id": "2026Mathematics",
+        "id": "int2",
         "category": "international",
         "status": "published",
         "title": "Distributed Edge Storage Systems: Proactive High-Availability Microservices with Live Migration and Rejuvenation Strategies",
-        "authors": [
-          {
-            "name": "Tuan Anh Nguyen",
-            "bold": false
-          },
-          {
-            "name": "Damsub Lim",
-            "bold": true
-          },
-          {
-            "name": "MinGi Kyung",
-            "bold": false
-          },
-          {
-            "name": "Dugki Min",
-            "bold": false
-          }
-        ],
-        "venue": "Mathematics",
+        "authors": "TA Nguyen, D Lim, MG Kyung, D Min",
+        "venue": "Mathematics 14 (10), 1704",
         "year": 2026,
         "links": {
           "doi": "10.3390/math14101704"
@@ -525,7 +463,7 @@ window.portfolioData = {
         "jcrYear": 2024
       },
       {
-        "id": "int1",
+        "id": "int3",
         "category": "international",
         "status": "published",
         "title": "S-iNAS: A Performance-Centric SRN Modeling and Analysis of Time and Event Based Scaling Strategies in Ceph-Based Industrial Network-Attached Storage",
@@ -541,7 +479,7 @@ window.portfolioData = {
         "jcrYear": 2024
       },
       {
-        "id": "int2",
+        "id": "int4",
         "category": "international",
         "status": "published",
         "title": "Metaverse Distributed Storages: High Availability Quantification using Stochastic Reward Nets",
@@ -552,7 +490,7 @@ window.portfolioData = {
         "isSCI": false
       },
       {
-        "id": "int3",
+        "id": "int5",
         "category": "international",
         "status": "published",
         "title": "Metaverse Cloud-Edge Computing: On Aging Dependability of a Cloud-Edge-in-the-loop Simulation Platform for AAM Vehicle Digital Twin",
@@ -563,7 +501,7 @@ window.portfolioData = {
         "isSCI": false
       },
       {
-        "id": "int4",
+        "id": "int6",
         "category": "international",
         "status": "published",
         "title": "Model-Based Sensitivity of a Disaster Tolerant Active-Active GENESIS Cloud System",

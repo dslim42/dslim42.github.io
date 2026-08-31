@@ -2,26 +2,35 @@
   "yourName": "Damsub Lim",
   "international": [
     {
-      "id": "2026IEEEAccessMTD",
-      "doi": "10.1109/ACCESS.2026.3728199",
+      "id": "int1",
       "isSCI": true,
       "quartile": "Q2",
       "topPercent": "37.6",
-      "jcrYear": 2025
+      "jcrYear": 2025,
+      "title": "Stochastic Petri Net Modeling and Evaluation of Moving Target Defense with Decoy Servers and IP Address Shuffling",
+      "authors": "L Santos, LG Silva, M Alves, L Feitosa, J Miqueias, L Lopes, P Rego, FA Silva, D Lim, D Min, TA Nguyen",
+      "venue": "IEEE Access",
+      "year": 2026,
+      "links": {
+        "doi": "10.1109/ACCESS.2026.3728199"
+      }
     },
     {
-      "id": "2026Mathematics",
-      "bibtex": "@Article{math14101704, AUTHOR = {Nguyen, Tuan Anh and Lim, Damsub and Kyung, MinGi and Min, Dugki}, TITLE = {Distributed Edge Storage Systems: Proactive High-Availability Microservices with Live Migration and Rejuvenation Strategies}, JOURNAL = {Mathematics}, VOLUME = {14}, YEAR = {2026}, NUMBER = {10}, ARTICLE-NUMBER = {1704}, URL = {https://www.mdpi.com/2227-7390/14/10/1704}, ISSN = {2227-7390}, DOI = {10.3390/math14101704}}",
-      "links": {
-        "doi": "https://doi.org/10.3390/math14101704"
-      },
+      "id": "int2",
       "isSCI": true,
       "quartile": "Q1",
       "topPercent": "6",
-      "jcrYear": 2024
+      "jcrYear": 2024,
+      "title": "Distributed Edge Storage Systems: Proactive High-Availability Microservices with Live Migration and Rejuvenation Strategies",
+      "authors": "TA Nguyen, D Lim, MG Kyung, D Min",
+      "venue": "Mathematics 14 (10), 1704",
+      "year": 2026,
+      "links": {
+        "doi": "10.3390/math14101704"
+      }
     },
     {
-      "id": "int1",
+      "id": "int3",
       "isSCI": true,
       "quartile": "Q2",
       "topPercent": "31.2",
@@ -35,7 +44,7 @@
       }
     },
     {
-      "id": "int2",
+      "id": "int4",
       "isSCI": false,
       "title": "Metaverse Distributed Storages: High Availability Quantification using Stochastic Reward Nets",
       "authors": "D Lim, TA Nguyen, D Min, E Choi, I Fe, FA Silva, P Maciel",
@@ -43,7 +52,7 @@
       "year": 2025
     },
     {
-      "id": "int3",
+      "id": "int5",
       "isSCI": false,
       "title": "Metaverse Cloud-Edge Computing: On Aging Dependability of a Cloud-Edge-in-the-loop Simulation Platform for AAM Vehicle Digital Twin",
       "authors": "TA Nguyen, D Lim, S Nam, D Min, I Fe, FA Silva, P Maciel",
@@ -51,7 +60,7 @@
       "year": 2025
     },
     {
-      "id": "int4",
+      "id": "int6",
       "isSCI": false,
       "title": "Model-Based Sensitivity of a Disaster Tolerant Active-Active GENESIS Cloud System",
       "authors": "TA Nguyen, X Rui, D Lim, J Oh, D Min, E Choi, TD Thang, NN Son",
