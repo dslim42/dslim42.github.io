@@ -155,7 +155,13 @@
     const profile = profileData.profile || {};
     return {
       name: localizedField(profile, 'name', language), position: localizedField(profile, 'position', language), focus: localizedField(profile, 'focus', language), photo: profile.photo || '', email: profileData.contact?.emailDisplay || profileData.contact?.email || '', location: localizedField(profileData.contact, 'location', language),
-      education: (profileData.educationExperience || []).map(item => ({ date: item.period || '', title: localizedField(item, 'title', language), details: [localizedField(item, 'organization', language), ...(Array.isArray(localizedField(item, 'details', language)) ? localizedField(item, 'details', language) : [])].filter(hasContent) })),
+      education: (profileData.educationExperience || []).map(item => {
+        const org = localizedField(item, 'organization', language);
+        const rawDetails = localizedField(item, 'details', language);
+        const detailsArray = Array.isArray(rawDetails) ? rawDetails : (rawDetails ? [rawDetails] : []);
+        const filteredDetails = detailsArray.filter(detail => !/^(Advisor|지도교수)\s*:/i.test(String(detail).trim()));
+        return { date: item.period || '', title: localizedField(item, 'title', language), details: [org, ...filteredDetails].filter(hasContent) };
+      }),
       // The print CV is a publication record: manuscripts in progress stay on
       // the web view and are excluded regardless of the on-screen toggle state.
       papers: (data.publications?.papers || []).filter(paper => String(paper.status || 'published').trim().toLowerCase() === 'published'), projects: data.researchProjects || [], interests: (profileData.researchInterests || []).map(item => ({ title: localizedField(item, 'title', language), detail: localizedField(item, 'description', language) }))

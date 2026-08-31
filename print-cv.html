@@ -93,9 +93,20 @@
             return (language === 'ko' ? [...korean, ...english] : [...english, ...korean]).find(hasContent) || '';
         }
 
-        function authorText(authors) {
-            if (Array.isArray(authors)) return authors.map(author => author.name || author).join(', ');
-            return String(authors || '');
+        function renderAuthorsHtml(authors) {
+            if (!authors) return '';
+            if (Array.isArray(authors)) {
+                return authors.map(author => {
+                    const name = typeof author === 'object' ? (author.name || '') : String(author);
+                    const isBold = typeof author === 'object' && author.bold;
+                    const escaped = escapeHtml(name);
+                    if (isBold || /^(Damsub Lim|D Lim|DS Lim|임담섭)$/i.test(name.trim())) {
+                        return `<u><strong>${escaped}</strong></u>`;
+                    }
+                    return escaped;
+                }).join(', ');
+            }
+            return escapeHtml(String(authors)).replace(/Damsub Lim|D Lim|DS Lim|임담섭/g, name => `<u><strong>${name}</strong></u>`);
         }
 
         function publicationBadge(paper, lang) {
@@ -113,10 +124,10 @@
         function renderPrintPaper(paper, lang) {
             const doi = paper.links?.doi;
             const doiUrl = doi ? (doi.startsWith('http') ? doi : `https://doi.org/${doi}`) : '';
-            const authors = authorText(localizedField(paper, 'authors', lang));
-            const authorLine = authors ? `<br>${escapeHtml(authors)}` : '';
+            const authorsHtml = renderAuthorsHtml(localizedField(paper, 'authors', lang));
+            const authorLine = authorsHtml ? `<br>${authorsHtml}` : '';
             const authorRole = localizedField(paper, 'authorRole', lang);
-            const authorRoleLine = !authors && authorRole ? `<br>${escapeHtml(`${lang === 'ko' ? '저자 역할' : 'Author Role'}: ${authorRole}`)}` : '';
+            const authorRoleLine = !authorsHtml && authorRole ? `<br>${escapeHtml(`${lang === 'ko' ? '저자 역할' : 'Author Role'}: ${authorRole}`)}` : '';
             return `<li><strong>${escapeHtml(`${publicationBadge(paper, lang)}${localizedField(paper, 'title', lang)}`)}</strong>${authorLine}${authorRoleLine}<br><em>${escapeHtml(localizedField(paper, 'venue', lang))}${paper.year ? ` (${escapeHtml(paper.year)})` : ''}</em>${doiUrl ? ` / <a href="${escapeHtml(doiUrl)}">${escapeHtml(doiUrl)}</a>` : ''}</li>`;
         }
 
@@ -129,7 +140,10 @@
                 [text.email, snapshot.email],
                 [text.location, snapshot.location],
             ].filter(([, value]) => value).map(([term, value]) => `<div class="personal-row"><dt>${escapeHtml(term)}</dt><dd>${escapeHtml(value)}</dd></div>`).join('');
-            const education = snapshot.education.map(item => `<div class="dated-item"><div class="date">${escapeHtml(item.date)}</div><div><strong>${escapeHtml(item.title)}</strong>${item.details.map(detail => `<p class="subline">${escapeHtml(detail)}</p>`).join('')}</div></div>`).join('') || '<p>No education entries were found in the portfolio.</p>';
+            const education = snapshot.education.map(item => {
+                const details = (item.details || []).filter(detail => !/^(Advisor|지도교수)\s*:/i.test(String(detail).trim()));
+                return `<div class="dated-item"><div class="date">${escapeHtml(item.date)}</div><div><strong>${escapeHtml(item.title)}</strong>${details.map(detail => `<p class="subline">${escapeHtml(detail)}</p>`).join('')}</div></div>`;
+            }).join('') || '<p>No education entries were found in the portfolio.</p>';
             const sortedPapers = [...snapshot.papers];
             const paperGroups = [
                 ['International Journal/Conference Papers', sortedPapers.filter(paper => paper.category === 'international')],
