@@ -1,7 +1,7 @@
 {
   "international": [
     {
-      "id": "workload-aware-ceph-2026",
+      "id": "workload_aware_ceph_2026",
       "status": "Submitted",
       "journalGrade": "SCI, Q1",
       "title": "Workload-Aware Resource Allocation Strategies for Ceph-Based Distributed Storage Systems: Stochastic Reward Net-Based Performance Characterization",
@@ -14,7 +14,7 @@
       }
     },
     {
-      "id": "aerial-computing-surveillance-2026",
+      "id": "aerial_computing_surveillance_2026",
       "status": "Submitted",
       "journalGrade": "SCI, Q1",
       "title": "Aerial Computing for Surveillance: A Comprehensive Analytical and Numerical Availability Quantification",
@@ -27,7 +27,7 @@
       }
     },
     {
-      "id": "iot-ehealth-survivability-2026",
+      "id": "iot_ehealth_survivability_2026",
       "status": "Submitted",
       "journalGrade": "SCI, Q1",
       "title": "Survivability and Resiliency Quantification of IoT Systems for e-Health Monitoring",
@@ -40,7 +40,7 @@
       }
     },
     {
-      "id": "lisa-llm-rejuvenation-2026",
+      "id": "lisa_llm_rejuvenation_2026",
       "status": "Submitted",
       "journalGrade": "SCI, Q1",
       "title": "LISA: LLM Inference-Serving Clusters Availability and Performability under Load-Adaptive Rejuvenation",
@@ -53,7 +53,7 @@
       }
     },
     {
-      "id": "quantum-cloud-calibration-2026",
+      "id": "quantum_cloud_calibration_2026",
       "status": "Submitted",
       "journalGrade": "SCI, Q1",
       "title": "Calibration-Aware Dependability and Performability of Multi-QPU Quantum-Cloud Services",
@@ -66,7 +66,7 @@
       }
     },
     {
-      "id": "distributed-storage-rejuvenation-2026",
+      "id": "distributed_storage_rejuvenation_2026",
       "status": "Revised & Resubmitted",
       "journalGrade": "SCI, Q1",
       "title": "Distributed Storage Rejuvenation: Performability Modeling and Analysis using Stochastic Reward Nets",

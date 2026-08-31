@@ -341,7 +341,7 @@ window.portfolioData = {
     "yourName": "Damsub Lim",
     "papers": [
       {
-        "id": "workload-aware-ceph-2026",
+        "id": "workload_aware_ceph_2026",
         "category": "international",
         "status": "Submitted",
         "title": "Workload-Aware Resource Allocation Strategies for Ceph-Based Distributed Storage Systems: Stochastic Reward Net-Based Performance Characterization",
@@ -356,7 +356,7 @@ window.portfolioData = {
         "submittedDate": "2026-06-26"
       },
       {
-        "id": "aerial-computing-surveillance-2026",
+        "id": "aerial_computing_surveillance_2026",
         "category": "international",
         "status": "Submitted",
         "title": "Aerial Computing for Surveillance: A Comprehensive Analytical and Numerical Availability Quantification",
@@ -371,7 +371,7 @@ window.portfolioData = {
         "submittedDate": "2026-06-26"
       },
       {
-        "id": "iot-ehealth-survivability-2026",
+        "id": "iot_ehealth_survivability_2026",
         "category": "international",
         "status": "Submitted",
         "title": "Survivability and Resiliency Quantification of IoT Systems for e-Health Monitoring",
@@ -386,7 +386,7 @@ window.portfolioData = {
         "submittedDate": "2026-07-14"
       },
       {
-        "id": "lisa-llm-rejuvenation-2026",
+        "id": "lisa_llm_rejuvenation_2026",
         "category": "international",
         "status": "Submitted",
         "title": "LISA: LLM Inference-Serving Clusters Availability and Performability under Load-Adaptive Rejuvenation",
@@ -401,7 +401,7 @@ window.portfolioData = {
         "submittedDate": "2026-07-18"
       },
       {
-        "id": "quantum-cloud-calibration-2026",
+        "id": "quantum_cloud_calibration_2026",
         "category": "international",
         "status": "Submitted",
         "title": "Calibration-Aware Dependability and Performability of Multi-QPU Quantum-Cloud Services",
@@ -416,7 +416,7 @@ window.portfolioData = {
         "submittedDate": "2026-07-18"
       },
       {
-        "id": "distributed-storage-rejuvenation-2026",
+        "id": "distributed_storage_rejuvenation_2026",
         "category": "international",
         "status": "Revised & Resubmitted",
         "title": "Distributed Storage Rejuvenation: Performability Modeling and Analysis using Stochastic Reward Nets",
@@ -431,7 +431,7 @@ window.portfolioData = {
         "submittedDate": "2026-05-20"
       },
       {
-        "id": "moving-target-defense-2026",
+        "id": "moving_target_defense_2026",
         "category": "international",
         "status": "published",
         "title": "Stochastic Petri Net Modeling and Evaluation of Moving Target Defense with Decoy Servers and IP Address Shuffling",
@@ -447,7 +447,7 @@ window.portfolioData = {
         "jcrYear": 2025
       },
       {
-        "id": "distributed-edge-storage-2026",
+        "id": "distributed_edge_storage_2026",
         "category": "international",
         "status": "published",
         "title": "Distributed Edge Storage Systems: Proactive High-Availability Microservices with Live Migration and Rejuvenation Strategies",
@@ -463,7 +463,7 @@ window.portfolioData = {
         "jcrYear": 2024
       },
       {
-        "id": "sinas-2026",
+        "id": "sinas_2026",
         "category": "international",
         "status": "published",
         "title": "S-iNAS: A Performance-Centric SRN Modeling and Analysis of Time and Event Based Scaling Strategies in Ceph-Based Industrial Network-Attached Storage",
@@ -479,7 +479,7 @@ window.portfolioData = {
         "jcrYear": 2024
       },
       {
-        "id": "metaverse-distributed-storages-2025",
+        "id": "metaverse_distributed_storages_2025",
         "category": "international",
         "status": "published",
         "title": "Metaverse Distributed Storages: High Availability Quantification using Stochastic Reward Nets",
@@ -490,7 +490,7 @@ window.portfolioData = {
         "isSCI": false
       },
       {
-        "id": "metaverse-cloud-edge-2025",
+        "id": "metaverse_cloud_edge_2025",
         "category": "international",
         "status": "published",
         "title": "Metaverse Cloud-Edge Computing: On Aging Dependability of a Cloud-Edge-in-the-loop Simulation Platform for AAM Vehicle Digital Twin",
@@ -501,7 +501,7 @@ window.portfolioData = {
         "isSCI": false
       },
       {
-        "id": "genesis-cloud-disaster-tolerance-2017",
+        "id": "genesis_cloud_disaster_tolerance_2017",
         "category": "international",
         "status": "published",
         "title": "Model-Based Sensitivity of a Disaster Tolerant Active-Active GENESIS Cloud System",
