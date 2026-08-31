@@ -431,19 +431,65 @@ window.portfolioData = {
         "submittedDate": "2026-05-20"
       },
       {
-        "id": "moving-target-defense-2026",
+        "id": "2026IEEEAccessMTD",
         "category": "international",
-        "status": "Revised & Resubmitted",
+        "status": "published",
         "title": "Stochastic Petri Net Modeling and Evaluation of Moving Target Defense with Decoy Servers and IP Address Shuffling",
+        "authors": [
+          {
+            "name": "Lucas Santos",
+            "bold": false
+          },
+          {
+            "name": "Luis Guilherme Silva",
+            "bold": false
+          },
+          {
+            "name": "Melissa Alves",
+            "bold": false
+          },
+          {
+            "name": "Leonel Feitosa",
+            "bold": false
+          },
+          {
+            "name": "Jose Miqueias",
+            "bold": false
+          },
+          {
+            "name": "Lucas Lopes",
+            "bold": false
+          },
+          {
+            "name": "Paulo Rego",
+            "bold": false
+          },
+          {
+            "name": "Francisco Airton Silva",
+            "bold": false
+          },
+          {
+            "name": "Damsub Lim",
+            "bold": true
+          },
+          {
+            "name": "Dugki Min",
+            "bold": false
+          },
+          {
+            "name": "Tuan Anh Nguyen",
+            "bold": false
+          }
+        ],
         "venue": "IEEE Access",
         "year": 2026,
-        "links": {},
-        "journalGrade": "SCI, Q2",
-        "authorRole": {
-          "en": "Co-author",
-          "ko": "공동저자"
+        "links": {
+          "doi": "10.1109/ACCESS.2026.3728199"
         },
-        "submittedDate": "2026-06-28"
+        "isSCI": true,
+        "quartile": "Q2",
+        "topPercent": "37.6",
+        "jcrYear": 2025
       },
       {
         "id": "2026Mathematics",

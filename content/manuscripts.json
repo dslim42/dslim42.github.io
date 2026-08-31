@@ -77,19 +77,6 @@
         "en": "First Author",
         "ko": "주저자"
       }
-    },
-    {
-      "id": "moving-target-defense-2026",
-      "status": "Revised & Resubmitted",
-      "journalGrade": "SCI, Q2",
-      "title": "Stochastic Petri Net Modeling and Evaluation of Moving Target Defense with Decoy Servers and IP Address Shuffling",
-      "venue": "IEEE Access",
-      "year": 2026,
-      "submittedDate": "2026-06-28",
-      "authorRole": {
-        "en": "Co-author",
-        "ko": "공동저자"
-      }
     }
   ],
   "domestic": []
