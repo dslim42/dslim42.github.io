@@ -308,6 +308,21 @@ window.portfolioData = {
     "yourName": "Damsub Lim",
     "papers": [
       {
+        "id": "distributed_storage_rejuvenation_2026",
+        "category": "international",
+        "status": "Accepted",
+        "title": "Distributed Storage Rejuvenation: Performability Modeling and Analysis using Stochastic Reward Nets",
+        "venue": "Cluster Computing",
+        "year": 2026,
+        "links": {},
+        "isSCI": true,
+        "quartile": "Q1",
+        "authorRole": {
+          "en": "First Author",
+          "ko": "주저자"
+        }
+      },
+      {
         "id": "moving_target_defense_2026",
         "category": "international",
         "status": "published",
