@@ -317,6 +317,8 @@ window.portfolioData = {
         "links": {},
         "isSCI": true,
         "quartile": "Q1",
+        "topPercent": "15.8",
+        "jcrYear": 2025,
         "authorRole": {
           "en": "First Author",
           "ko": "주저자"

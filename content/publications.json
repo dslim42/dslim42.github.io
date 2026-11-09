@@ -7,6 +7,8 @@
       "acceptedDate": "2026-11-01",
       "isSCI": true,
       "quartile": "Q1",
+      "topPercent": "15.8",
+      "jcrYear": 2025,
       "title": "Distributed Storage Rejuvenation: Performability Modeling and Analysis using Stochastic Reward Nets",
       "authorRole": {
         "en": "First Author",
