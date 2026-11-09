@@ -113,14 +113,14 @@
             const status = String(paper.status || '').trim();
             const statusBadge = status && status.toLowerCase() !== 'published' ? `[${status}] ` : '';
             const explicitGrade = localizedField(paper, 'journalGrade', lang);
-            if (explicitGrade) return `[${explicitGrade}] ${statusBadge}`;
+            if (explicitGrade) return `${statusBadge}[${explicitGrade}] `;
             if (paper.isSCI) {
                 const quality = ['SCI'];
                 if (paper.quartile) quality.push(paper.quartile);
                 if (paper.topPercent) quality.push(`Top ${paper.topPercent}%${paper.jcrYear ? `, JCR ${paper.jcrYear}` : ''}`);
-                return `[${quality.join(', ')}] ${statusBadge}`;
+                return `${statusBadge}[${quality.join(', ')}] `;
             }
-            return `${paper.isKSCI ? '[KSCI] ' : ''}${statusBadge}`;
+            return `${statusBadge}${paper.isKSCI ? '[KSCI] ' : ''}`;
         }
 
         function renderPrintPaper(paper, lang) {
