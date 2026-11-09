@@ -26,8 +26,8 @@ the matching array in `content/manuscripts.json` instead.
 {
   "id": "my-paper-2026",
   "doi": "10.xxxx/example",
-  "journalGrade": "SCI, Q2 (Top 31.2%, JCR 2024)",
-  "isSCI": true,
+  "journalGrade": "SCIE, Q2 (Top 31.2%, JCR 2024)",
+  "isSCIE": true,
   "quartile": "Q2"
 }
 ```
@@ -90,8 +90,8 @@ not printed in the CV. Use `acceptedDate` in the same format for an `Accepted`
 or `In Press` paper; it is shown on the website and in the print CV until the
 paper's status becomes `Published`.
 
-`journalGrade` accepts a manually written quality label such as `SCI, Q1 (Top
-6%, JCR 2024)`. It overrides the automatic label created from `isSCI`,
+`journalGrade` accepts a manually written quality label such as `SCIE, Q1 (Top
+6%, JCR 2024)`. It overrides the automatic label created from `isSCIE`,
 `quartile`, `topPercent`, and `jcrYear`. `journalGradeKo` is optional for a
 separate Korean grade label; status stays English by design.
 

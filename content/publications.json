@@ -5,7 +5,7 @@
       "id": "distributed_storage_rejuvenation_2026",
       "status": "Accepted",
       "acceptedDate": "2026-11-01",
-      "isSCI": true,
+      "isSCIE": true,
       "quartile": "Q1",
       "topPercent": "15.8",
       "jcrYear": 2025,
@@ -19,7 +19,7 @@
     },
     {
       "id": "moving_target_defense_2026",
-      "isSCI": true,
+      "isSCIE": true,
       "quartile": "Q2",
       "topPercent": "37.6",
       "jcrYear": 2025,
@@ -33,7 +33,7 @@
     },
     {
       "id": "distributed_edge_storage_2026",
-      "isSCI": true,
+      "isSCIE": true,
       "quartile": "Q1",
       "topPercent": "6",
       "jcrYear": 2024,
@@ -47,7 +47,7 @@
     },
     {
       "id": "sinas_2026",
-      "isSCI": true,
+      "isSCIE": true,
       "quartile": "Q2",
       "topPercent": "31.2",
       "jcrYear": 2024,
@@ -61,7 +61,7 @@
     },
     {
       "id": "metaverse_distributed_storages_2025",
-      "isSCI": false,
+      "isSCIE": false,
       "title": "Metaverse Distributed Storages: High Availability Quantification using Stochastic Reward Nets",
       "authors": "D Lim, TA Nguyen, D Min, E Choi, I Fe, FA Silva, P Maciel",
       "venue": "2025 International Conference on Metaverse Computing, Networking and Applications (MetaCom)",
@@ -69,7 +69,7 @@
     },
     {
       "id": "metaverse_cloud_edge_2025",
-      "isSCI": false,
+      "isSCIE": false,
       "title": "Metaverse Cloud-Edge Computing: On Aging Dependability of a Cloud-Edge-in-the-loop Simulation Platform for AAM Vehicle Digital Twin",
       "authors": "TA Nguyen, D Lim, S Nam, D Min, I Fe, FA Silva, P Maciel",
       "venue": "2025 International Conference on Metaverse Computing, Networking and Applications (MetaCom)",
@@ -77,7 +77,7 @@
     },
     {
       "id": "genesis_cloud_disaster_tolerance_2017",
-      "isSCI": false,
+      "isSCIE": false,
       "title": "Model-Based Sensitivity of a Disaster Tolerant Active-Active GENESIS Cloud System",
       "authors": "TA Nguyen, X Rui, D Lim, J Oh, D Min, E Choi, TD Thang, NN Son",
       "venue": "International Conference on Industrial Networks and Intelligent Systems, 228-241",

@@ -258,7 +258,12 @@ async function normalizePaper(entry, index, yourName, fallbackCategory) {
     links,
   };
 
-  for (const key of ["isSCI", "isKSCI", "quartile", "topPercent", "jcrYear", "journalGrade", "journalGradeKo", "authorRole", "authorRoleKo", "submittedDate", "acceptedDate", "titleLink", "abstract"]) {
+  // SCI was merged into SCIE (Clarivate, 2020); fail loudly instead of silently dropping the badge.
+  if (entry.isSCI !== undefined) {
+    throw new Error(`Paper ${normalized.id}: "isSCI" was renamed to "isSCIE". Update content/*.json.`);
+  }
+
+  for (const key of ["isSCIE", "isKSCI", "quartile", "topPercent", "jcrYear", "journalGrade", "journalGradeKo", "authorRole", "authorRoleKo", "submittedDate", "acceptedDate", "titleLink", "abstract"]) {
     if (entry[key] !== undefined && entry[key] !== null && entry[key] !== "") {
       normalized[key] = entry[key];
     }

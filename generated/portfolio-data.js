@@ -315,7 +315,7 @@ window.portfolioData = {
         "venue": "Cluster Computing",
         "year": 2026,
         "links": {},
-        "isSCI": true,
+        "isSCIE": true,
         "quartile": "Q1",
         "topPercent": "15.8",
         "jcrYear": 2025,
@@ -336,7 +336,7 @@ window.portfolioData = {
         "links": {
           "doi": "10.1109/ACCESS.2026.3728199"
         },
-        "isSCI": true,
+        "isSCIE": true,
         "quartile": "Q2",
         "topPercent": "37.6",
         "jcrYear": 2025
@@ -352,7 +352,7 @@ window.portfolioData = {
         "links": {
           "doi": "10.3390/math14101704"
         },
-        "isSCI": true,
+        "isSCIE": true,
         "quartile": "Q1",
         "topPercent": "6",
         "jcrYear": 2024
@@ -368,7 +368,7 @@ window.portfolioData = {
         "links": {
           "doi": "10.1007/s10922-025-10005-6"
         },
-        "isSCI": true,
+        "isSCIE": true,
         "quartile": "Q2",
         "topPercent": "31.2",
         "jcrYear": 2024
@@ -382,7 +382,7 @@ window.portfolioData = {
         "venue": "2025 International Conference on Metaverse Computing, Networking and Applications (MetaCom)",
         "year": 2025,
         "links": {},
-        "isSCI": false
+        "isSCIE": false
       },
       {
         "id": "metaverse_cloud_edge_2025",
@@ -393,7 +393,7 @@ window.portfolioData = {
         "venue": "2025 International Conference on Metaverse Computing, Networking and Applications (MetaCom)",
         "year": 2025,
         "links": {},
-        "isSCI": false
+        "isSCIE": false
       },
       {
         "id": "genesis_cloud_disaster_tolerance_2017",
@@ -404,7 +404,7 @@ window.portfolioData = {
         "venue": "International Conference on Industrial Networks and Intelligent Systems, 228-241",
         "year": 2017,
         "links": {},
-        "isSCI": false
+        "isSCIE": false
       },
       {
         "id": "dom1",

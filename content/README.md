@@ -52,8 +52,8 @@ Add a published paper to the `international` or `domestic` array in
 {
   "id": "sinas-2026",
   "doi": "10.1007/s10922-025-10005-6",
-  "journalGrade": "SCI, Q2 (Top 31.2%, JCR 2024)",
-  "isSCI": true,
+  "journalGrade": "SCIE, Q2 (Top 31.2%, JCR 2024)",
+  "isSCIE": true,
   "quartile": "Q2"
 }
 ```
@@ -81,7 +81,7 @@ The parser reads `title`, `author`, `journal`, `booktitle`, `year`, `doi`,
 ## Manual Override
 
 Any field in either paper JSON file wins over DOI or BibTeX data. This is useful
-for fixing abbreviation, category, SCI/KSCI labels, or links:
+for fixing abbreviation, category, SCIE/KSCI labels, or links:
 
 ```json
 {
@@ -92,8 +92,8 @@ for fixing abbreviation, category, SCI/KSCI labels, or links:
   "venue": "Preferred Venue Name",
   "year": 2026,
   "status": "Major Revision",
-  "journalGrade": "SCI, Q1 (Top 6%, JCR 2024)",
-  "isSCI": false,
+  "journalGrade": "SCIE, Q1 (Top 6%, JCR 2024)",
+  "isSCIE": false,
   "links": { "doi": "10.xxxx/example" }
 }
 ```
@@ -140,8 +140,8 @@ shown on the website and in the print CV while the paper has such a status,
 and hidden once `status` is removed or set to `Published`.
 
 Use `journalGrade` for any manually written journal-quality label, such as
-`SCI, Q1 (Top 6%, JCR 2024)`. It overrides the automatic label created from
-`isSCI`, `quartile`, `topPercent`, and `jcrYear`. Add `journalGradeKo` only if
+`SCIE, Q1 (Top 6%, JCR 2024)`. It overrides the automatic label created from
+`isSCIE`, `quartile`, `topPercent`, and `jcrYear`. Add `journalGradeKo` only if
 you want the journal-grade label itself to be different in Korean; the
 publication status remains English by design.
 

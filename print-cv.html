@@ -114,8 +114,8 @@
             const statusBadge = status && status.toLowerCase() !== 'published' ? `[${status}] ` : '';
             const explicitGrade = localizedField(paper, 'journalGrade', lang);
             if (explicitGrade) return `${statusBadge}[${explicitGrade}] `;
-            if (paper.isSCI) {
-                const quality = ['SCI'];
+            if (paper.isSCIE) {
+                const quality = ['SCIE'];
                 if (paper.quartile) quality.push(paper.quartile);
                 if (paper.topPercent) quality.push(`Top ${paper.topPercent}%${paper.jcrYear ? `, JCR ${paper.jcrYear}` : ''}`);
                 return `${statusBadge}[${quality.join(', ')}] `;

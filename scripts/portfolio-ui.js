@@ -116,7 +116,7 @@
     );
     const renderList = list => !list.length ? '<div class="text-gray-500 italic">No publications in this category.</div>' : list.map(paper => {
       const language = activeLanguage();
-      const automaticGrade = paper.isSCI ? `SCI${paper.quartile ? `, ${paper.quartile}` : ''}${paper.topPercent ? ` (Top ${paper.topPercent}%${paper.jcrYear ? `, JCR ${paper.jcrYear}` : ''})` : ''}` : (paper.isKSCI ? 'KSCI' : '');
+      const automaticGrade = paper.isSCIE ? `SCIE${paper.quartile ? `, ${paper.quartile}` : ''}${paper.topPercent ? ` (Top ${paper.topPercent}%${paper.jcrYear ? `, JCR ${paper.jcrYear}` : ''})` : ''}` : (paper.isKSCI ? 'KSCI' : '');
       const journalGrade = localizedField(paper, 'journalGrade', language) || automaticGrade;
       const badge = journalGrade ? `<span class="text-red-600 font-bold mr-2">[${escapeHtml(journalGrade)}]</span>` : '';
       const status = typeof paper.status === 'string' ? paper.status.trim() : '';
