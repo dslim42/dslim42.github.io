@@ -23,6 +23,11 @@
     return (language === 'ko' ? [...korean, ...english] : [...english, ...korean]).find(hasContent) || '';
   };
 
+  // Accepted and in-press papers are publication records (main list and print
+  // CV); every other non-published status is a manuscript in progress.
+  const PUBLICATION_STATUSES = ['published', 'accepted', 'in press'];
+  const isManuscript = paper => !PUBLICATION_STATUSES.includes(String(paper.status || 'published').trim().toLowerCase());
+
   const renderRichText = value => (Array.isArray(value) ? value : [value]).map(part => {
     const item = typeof part === 'string' ? { text: part } : (part || {});
     let output = escapeHtml(item.text);
@@ -96,7 +101,6 @@
   }
 
   function renderPublications(papers) {
-    const isManuscript = paper => String(paper.status || 'published').trim().toLowerCase() !== 'published';
     const toggle = document.getElementById('publications-manuscript-toggle');
     const manuscriptCount = (papers || []).filter(isManuscript).length;
     let showManuscripts = false;
@@ -164,7 +168,7 @@
       }),
       // The print CV is a publication record: manuscripts in progress stay on
       // the web view and are excluded regardless of the on-screen toggle state.
-      papers: (data.publications?.papers || []).filter(paper => String(paper.status || 'published').trim().toLowerCase() === 'published'), projects: data.researchProjects || [], interests: (profileData.researchInterests || []).map(item => ({ title: localizedField(item, 'title', language), detail: localizedField(item, 'description', language) }))
+      papers: (data.publications?.papers || []).filter(paper => !isManuscript(paper)), projects: data.researchProjects || [], interests: (profileData.researchInterests || []).map(item => ({ title: localizedField(item, 'title', language), detail: localizedField(item, 'description', language) }))
     };
   }
 

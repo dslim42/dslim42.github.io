@@ -110,15 +110,17 @@
         }
 
         function publicationBadge(paper, lang) {
+            const status = String(paper.status || '').trim();
+            const statusBadge = status && status.toLowerCase() !== 'published' ? `[${status}] ` : '';
             const explicitGrade = localizedField(paper, 'journalGrade', lang);
-            if (explicitGrade) return `[${explicitGrade}] `;
+            if (explicitGrade) return `[${explicitGrade}] ${statusBadge}`;
             if (paper.isSCI) {
                 const quality = ['SCI'];
                 if (paper.quartile) quality.push(paper.quartile);
                 if (paper.topPercent) quality.push(`Top ${paper.topPercent}%${paper.jcrYear ? `, JCR ${paper.jcrYear}` : ''}`);
-                return `[${quality.join(', ')}] `;
+                return `[${quality.join(', ')}] ${statusBadge}`;
             }
-            return paper.isKSCI ? '[KSCI] ' : '';
+            return `${paper.isKSCI ? '[KSCI] ' : ''}${statusBadge}`;
         }
 
         function renderPrintPaper(paper, lang) {

@@ -104,7 +104,9 @@ for fixing abbreviation, category, SCI/KSCI labels, or links:
 both English and Korean portfolio views. Examples include
 `Submitted`, `Minor Revision`, `Major Revision`, `Accepted`, and `In Press`.
 Omit `status`, or set it to `Published`, for a published paper without a
-status badge.
+status badge. `Accepted` and `In Press` papers are listed with published
+papers (and in the print CV) with a status badge; every other status is shown
+only under the website's manuscripts-in-progress toggle.
 
 For a manuscript that does not yet have a finalized author list, `authors` may
 be omitted temporarily. The author line is hidden on the portfolio and print
