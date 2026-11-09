@@ -130,9 +130,11 @@
       const submittedDate = paper.submittedDate ? String(paper.submittedDate).trim() : '';
       const submittedDateLabel = language === 'ko' ? '제출일' : 'Submission Date';
       const submittedDateLine = isManuscript(paper) && submittedDate ? `<p class="text-gray-500 text-sm mb-2"><span class="font-medium text-gray-600">${submittedDateLabel}:</span> ${escapeHtml(submittedDate)}</p>` : '';
+      const acceptedDate = paper.acceptedDate ? String(paper.acceptedDate).trim() : '';
+      const acceptedDateLine = status && status.toLowerCase() !== 'published' && acceptedDate ? `<p class="text-gray-500 text-sm mb-2"><span class="font-medium text-gray-600">${language === 'ko' ? '게재 승인일' : 'Accepted'}:</span> ${escapeHtml(acceptedDate)}</p>` : '';
       const doi = paper.links?.doi;
       const doiUrl = doi ? (doi.startsWith('http') ? doi : `https://doi.org/${doi}`) : '';
-      return `<div class="border-l-4 border-[#2b6cb0] pl-4 py-2 transition hover:bg-gray-50"><h3 class="text-xl font-semibold mb-2 leading-tight"><span class="text-gray-800">${badge}${statusBadge}${escapeHtml(localizedField(paper, 'title', language))}</span></h3>${authorLine}${authorRoleLine}${submittedDateLine}<p class="text-gray-500 text-sm mb-2"><em>${escapeHtml(localizedField(paper, 'venue', language))}${paper.year ? ` (${escapeHtml(paper.year)})` : ''}</em>${doiUrl ? ` <span class="not-italic text-[#2b6cb0]">/ <a href="${escapeHtml(doiUrl)}" target="_blank" rel="noopener" class="hover:text-[#2c5282] whitespace-nowrap"><i class="fas fa-link mr-1"></i>DOI</a></span>` : ''}</p></div>`;
+      return `<div class="border-l-4 border-[#2b6cb0] pl-4 py-2 transition hover:bg-gray-50"><h3 class="text-xl font-semibold mb-2 leading-tight"><span class="text-gray-800">${badge}${statusBadge}${escapeHtml(localizedField(paper, 'title', language))}</span></h3>${authorLine}${authorRoleLine}${submittedDateLine}${acceptedDateLine}<p class="text-gray-500 text-sm mb-2"><em>${escapeHtml(localizedField(paper, 'venue', language))}${paper.year ? ` (${escapeHtml(paper.year)})` : ''}</em>${doiUrl ? ` <span class="not-italic text-[#2b6cb0]">/ <a href="${escapeHtml(doiUrl)}" target="_blank" rel="noopener" class="hover:text-[#2c5282] whitespace-nowrap"><i class="fas fa-link mr-1"></i>DOI</a></span>` : ''}</p></div>`;
     }).join('');
     const international = document.getElementById('publications-international-list');
     const domestic = document.getElementById('publications-domestic-list');

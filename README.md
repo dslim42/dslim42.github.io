@@ -86,7 +86,9 @@ Use `authorRole` in that case to show your role, for example:
 
 Use `submittedDate` for a submission or resubmission date, in `YYYY-MM-DD`
 format. It appears only in the website's manuscripts-in-progress view and is
-not printed in the CV.
+not printed in the CV. Use `acceptedDate` in the same format for an `Accepted`
+or `In Press` paper; it is shown on the website and in the print CV until the
+paper's status becomes `Published`.
 
 `journalGrade` accepts a manually written quality label such as `SCI, Q1 (Top
 6%, JCR 2024)`. It overrides the automatic label created from `isSCI`,

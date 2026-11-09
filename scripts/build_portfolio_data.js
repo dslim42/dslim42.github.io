@@ -258,7 +258,7 @@ async function normalizePaper(entry, index, yourName, fallbackCategory) {
     links,
   };
 
-  for (const key of ["isSCI", "isKSCI", "quartile", "topPercent", "jcrYear", "journalGrade", "journalGradeKo", "authorRole", "authorRoleKo", "submittedDate", "titleLink", "abstract"]) {
+  for (const key of ["isSCI", "isKSCI", "quartile", "topPercent", "jcrYear", "journalGrade", "journalGradeKo", "authorRole", "authorRoleKo", "submittedDate", "acceptedDate", "titleLink", "abstract"]) {
     if (entry[key] !== undefined && entry[key] !== null && entry[key] !== "") {
       normalized[key] = entry[key];
     }

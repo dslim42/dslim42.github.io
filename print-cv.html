@@ -130,7 +130,9 @@
             const authorLine = authorsHtml ? `<br>${authorsHtml}` : '';
             const authorRole = localizedField(paper, 'authorRole', lang);
             const authorRoleLine = !authorsHtml && authorRole ? `<br>${escapeHtml(`${lang === 'ko' ? '저자 역할' : 'Author Role'}: ${authorRole}`)}` : '';
-            return `<li><strong>${escapeHtml(`${publicationBadge(paper, lang)}${localizedField(paper, 'title', lang)}`)}</strong>${authorLine}${authorRoleLine}<br><em>${escapeHtml(localizedField(paper, 'venue', lang))}${paper.year ? ` (${escapeHtml(paper.year)})` : ''}</em>${doiUrl ? ` / <a href="${escapeHtml(doiUrl)}">${escapeHtml(doiUrl)}</a>` : ''}</li>`;
+            const status = String(paper.status || '').trim().toLowerCase();
+            const acceptedDateLine = status && status !== 'published' && paper.acceptedDate ? `<br>${escapeHtml(`${lang === 'ko' ? '게재 승인일' : 'Accepted'}: ${paper.acceptedDate}`)}` : '';
+            return `<li><strong>${escapeHtml(`${publicationBadge(paper, lang)}${localizedField(paper, 'title', lang)}`)}</strong>${authorLine}${authorRoleLine}${acceptedDateLine}<br><em>${escapeHtml(localizedField(paper, 'venue', lang))}${paper.year ? ` (${escapeHtml(paper.year)})` : ''}</em>${doiUrl ? ` / <a href="${escapeHtml(doiUrl)}">${escapeHtml(doiUrl)}</a>` : ''}</li>`;
         }
 
         function renderCv(snapshot, lang) {

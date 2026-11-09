@@ -320,7 +320,8 @@ window.portfolioData = {
         "authorRole": {
           "en": "First Author",
           "ko": "주저자"
-        }
+        },
+        "acceptedDate": "2026-11-01"
       },
       {
         "id": "moving_target_defense_2026",

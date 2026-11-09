@@ -135,6 +135,10 @@ It is shown only in the website's manuscripts-in-progress view, not in the
 print CV. All entries in `manuscripts.json` are also excluded from the print
 CV.
 
+Use `acceptedDate` (`YYYY-MM-DD`) for an `Accepted` or `In Press` paper. It is
+shown on the website and in the print CV while the paper has such a status,
+and hidden once `status` is removed or set to `Published`.
+
 Use `journalGrade` for any manually written journal-quality label, such as
 `SCI, Q1 (Top 6%, JCR 2024)`. It overrides the automatic label created from
 `isSCI`, `quartile`, `topPercent`, and `jcrYear`. Add `journalGradeKo` only if

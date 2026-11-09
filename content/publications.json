@@ -4,6 +4,7 @@
     {
       "id": "distributed_storage_rejuvenation_2026",
       "status": "Accepted",
+      "acceptedDate": "2026-11-01",
       "isSCI": true,
       "quartile": "Q1",
       "title": "Distributed Storage Rejuvenation: Performability Modeling and Analysis using Stochastic Reward Nets",
