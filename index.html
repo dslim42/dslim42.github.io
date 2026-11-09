@@ -70,6 +70,66 @@
             }
         }
 
+        /* 사이드바 접기 (데스크탑): 처음 5초 보인 뒤 왼쪽으로 숨고, 가장자리 버튼으로 다시 연다 */
+        .sidebar-toggle {
+            display: none;
+        }
+
+        @media (min-width: 768px) {
+            .sidebar-fixed {
+                transition: transform 0.4s ease, visibility 0s;
+            }
+
+            main {
+                transition: margin-left 0.4s ease;
+            }
+
+            body.sidebar-hidden .sidebar-fixed {
+                transform: translateX(-100%);
+                visibility: hidden;
+                transition: transform 0.4s ease, visibility 0s 0.4s;
+            }
+
+            body.sidebar-hidden main {
+                margin-left: 0;
+            }
+
+            .sidebar-toggle {
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                position: fixed;
+                top: 1.5rem;
+                left: 20rem;
+                z-index: 40;
+                width: 2rem;
+                height: 3rem;
+                background: #fff;
+                border: 1px solid #e5e7eb;
+                border-left: none;
+                border-radius: 0 0.5rem 0.5rem 0;
+                box-shadow: 2px 2px 6px rgba(0, 0, 0, 0.08);
+                color: #4b5563;
+                transition: left 0.4s ease, color 0.2s ease;
+            }
+
+            .sidebar-toggle:hover {
+                color: var(--primary-color);
+            }
+
+            body.sidebar-hidden .sidebar-toggle {
+                left: 0;
+            }
+        }
+
+        @media (prefers-reduced-motion: reduce) {
+            .sidebar-fixed,
+            main,
+            .sidebar-toggle {
+                transition: none !important;
+            }
+        }
+
         /* 모바일 메뉴 토글 애니메이션 - 수정 불필요 */
         .mobile-menu {
             transition: max-height 0.3s ease-out;
@@ -167,7 +227,7 @@
              좌측 사이드바 (데스크탑 전용)
              모바일에서는 상단 헤더로 표시됨
              ========================================== -->
-        <aside class="w-full md:w-80 bg-white shadow-lg sidebar-fixed hidden md:block">
+        <aside id="profileSidebar" class="w-full md:w-80 bg-white shadow-lg sidebar-fixed hidden md:block">
             <div class="p-8">
                 <!-- ========== 프로필 사진 ========== -->
                 <!-- TODO: 프로필 사진 경로 변경 (assets/profile.jpg 또는 온라인 이미지 URL) -->
@@ -234,6 +294,10 @@
                 </div>
             </div>
         </aside>
+        <button id="sidebarToggle" type="button" class="sidebar-toggle" aria-controls="profileSidebar"
+            aria-expanded="true" aria-label="Hide profile" title="Hide profile">
+            <i class="fas fa-chevron-left"></i>
+        </button>
 
         <!-- ==========================================
              우측 메인 콘텐츠 영역
@@ -578,19 +642,60 @@
         // ========== 모바일 메뉴 토글 기능 ==========
         // 모바일에서 메뉴 버튼을 클릭하면 사이드바가 나타나거나 사라지는 기능
 
-        document.getElementById('mobileMenuToggle').addEventListener('click', function () {
-            const menu = document.getElementById('mobileMenu');
-            const icon = this.querySelector('i');
+        // 처음 5초는 프로필을 보여 주고 접는다. 그 전에 사용자가 버튼을 누르면 자동으로 접지 않는다.
+        const PROFILE_AUTO_HIDE_MS = 5000;
+        const isKorean = () => typeof currentLang === 'string' && currentLang === 'ko';
+        const mobileMenu = document.getElementById('mobileMenu');
+        const mobileMenuToggle = document.getElementById('mobileMenuToggle');
+        let mobileMenuTouched = false;
 
-            if (menu.classList.contains('hidden')) {
-                menu.classList.remove('hidden');
-                icon.classList.remove('fa-bars');
-                icon.classList.add('fa-times');
-            } else {
-                menu.classList.add('hidden');
-                icon.classList.remove('fa-times');
-                icon.classList.add('fa-bars');
-            }
+        function setMobileMenu(open) {
+            mobileMenu.classList.toggle('hidden', !open);
+            const icon = mobileMenuToggle.querySelector('i');
+            icon.classList.toggle('fa-bars', !open);
+            icon.classList.toggle('fa-times', open);
+            mobileMenuToggle.setAttribute('aria-expanded', String(open));
+        }
+
+        mobileMenuToggle.addEventListener('click', function () {
+            mobileMenuTouched = true;
+            setMobileMenu(mobileMenu.classList.contains('hidden'));
+        });
+
+        if (!window.matchMedia('(min-width: 768px)').matches) {
+            setMobileMenu(true);
+            setTimeout(() => {
+                if (mobileMenuTouched || mobileMenu.classList.contains('hidden')) return;
+                // The menu sits in the sticky header, so closing it shifts the page up. Keep the
+                // content in place; browsers with scroll anchoring already do this (shift = 0).
+                const main = document.querySelector('main');
+                const before = main.getBoundingClientRect().top;
+                setMobileMenu(false);
+                const shift = main.getBoundingClientRect().top - before;
+                if (window.scrollY > 0 && shift) window.scrollBy(0, shift);
+            }, PROFILE_AUTO_HIDE_MS);
+        }
+
+        // ========== 데스크탑 사이드바 접기 ==========
+        const sidebar = document.getElementById('profileSidebar');
+        const sidebarToggle = document.getElementById('sidebarToggle');
+
+        function setSidebarHidden(hidden) {
+            document.body.classList.toggle('sidebar-hidden', hidden);
+            sidebarToggle.setAttribute('aria-expanded', String(!hidden));
+            sidebarToggle.querySelector('i').className = `fas ${hidden ? 'fa-chevron-right' : 'fa-chevron-left'}`;
+            const label = hidden ? (isKorean() ? '프로필 보기' : 'Show profile') : (isKorean() ? '프로필 숨기기' : 'Hide profile');
+            sidebarToggle.title = label;
+            sidebarToggle.setAttribute('aria-label', label);
+        }
+
+        const sidebarAutoHide = setTimeout(() => {
+            if (!sidebar.matches(':hover')) setSidebarHidden(true);
+        }, PROFILE_AUTO_HIDE_MS);
+
+        sidebarToggle.addEventListener('click', () => {
+            clearTimeout(sidebarAutoHide);
+            setSidebarHidden(!document.body.classList.contains('sidebar-hidden'));
         });
 
         // ==========================================
