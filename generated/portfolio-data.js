@@ -450,7 +450,7 @@ window.portfolioData = {
         "status": "published",
         "title": "An SRN-based Availability Modeling and Analysis for Edge Computing Systems with Correlated Failures",
         "authors": "D Lim, TA Nguyen, D Min, MG KYUNG",
-        "venue": "Journal of The Korea Society of Computer and Information (한국컴퓨터정보학회논문지) 25 (10), 1-10",
+        "venue": "Journal of The Korea Society of Computer and Information (한국컴퓨터정보학회논문지) 30 (12), 25-35",
         "year": 2025,
         "links": {
           "doi": "10.9708/jksci.2025.30.12.025"
@@ -465,9 +465,7 @@ window.portfolioData = {
         "authors": "D Lim, R Ruixuhua, W Piao, D Min",
         "venue": "Annual Conference of KIPS, 614-616",
         "year": 2018,
-        "links": {
-          "doi": "10.22865/jita.2016.13.4.673"
-        },
+        "links": {},
         "isKSCI": true
       },
       {
