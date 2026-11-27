@@ -2,6 +2,19 @@
   "yourName": "Damsub Lim",
   "international": [
     {
+      "id": "cxl_memory_pool_2026",
+      "status": "Accepted",
+      "acceptedDate": "2026-11-24",
+      "isSCIE": true,
+      "quartile": "Q2",
+      "topPercent": "37.6",
+      "jcrYear": 2025,
+      "title": "Dependability Quantification of CXL Memory Pools Using Stochastic Reward Nets",
+      "authors": "TA Nguyen, TL Nguyen, D Lim, D Min, JW Lee",
+      "venue": "IEEE Access",
+      "year": 2026
+    },
+    {
       "id": "distributed_storage_rejuvenation_2026",
       "status": "Accepted",
       "acceptedDate": "2026-11-01",
