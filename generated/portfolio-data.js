@@ -9,8 +9,8 @@ window.portfolioData = {
       },
       "photo": "assets/260105-Profile-Damsub%20Lim.jpg",
       "position": {
-        "en": "PostDoc Researcher at KADA, Konkuk Univ.",
-        "ko": "건국대학교 KADA 박사후연구원"
+        "en": "Research Professor at KADA, Konkuk Univ.",
+        "ko": "건국대학교 KADA 학술연구교수"
       },
       "focus": {
         "en": "Research interests in Distributed Systems and Performance Reliability",
@@ -39,7 +39,7 @@ window.portfolioData = {
       {
         "en": [
           {
-            "text": "I am currently working as a postdoctoral researcher at "
+            "text": "I am currently working as a research professor at "
           },
           {
             "text": "KADA",
@@ -65,7 +65,7 @@ window.portfolioData = {
             "href": "https://sites.google.com/view/kadalab/home"
           },
           {
-            "text": "에서 PostDoc으로 재직중입니다. 건국대학교 "
+            "text": "에서 학술연구교수로 재직 중입니다. 건국대학교 "
           },
           {
             "text": "DMS 연구실",
@@ -177,7 +177,24 @@ window.portfolioData = {
     ],
     "educationExperience": [
       {
-        "period": "2025.12 - Current",
+        "period": "2026.12 - Current",
+        "en": {
+          "title": "Research Professor",
+          "organization": "Konkuk Aerospace Design & Airworthiness Institute (KADA)",
+          "details": [
+            "Konkuk University"
+          ]
+        },
+        "ko": {
+          "title": "학술연구교수",
+          "organization": "건국대학교 항공우주설계·인증 교책연구원(KADA)",
+          "details": [
+            "건국대학교"
+          ]
+        }
+      },
+      {
+        "period": "2025.12 - 2026.11",
         "en": {
           "title": "PostDoc Researcher",
           "organization": "Konkuk Aerospace Design & Airworthiness Institute (KADA)",
