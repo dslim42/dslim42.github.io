@@ -80,6 +80,17 @@
       education.innerHTML = `<h2 class="text-3xl font-bold text-[#2b6cb0] mb-6">Education / Experience</h2><div class="lang-en space-y-6">${rows('en')}</div><div class="lang-ko space-y-6" style="display:none;">${rows('ko')}</div>`;
     }
 
+    const patents = document.getElementById('patents');
+    if (patents) {
+      const rows = language => (data.patents || []).map(item => {
+        const inventors = localizedField(item, 'inventors', language);
+        const inventorsHtml = inventors ? `${language === 'ko' ? '발명자' : 'Inventors'}: ${escapeHtml(inventors).replace(/D Lim|임담섭/g, name => `<u><strong>${name}</strong></u>`)}` : '';
+        const meta = [item.number, item.year, localizedField(item, 'status', language)].filter(hasContent).map(escapeHtml).join(' · ');
+        return `<div class="border-l-4 border-[#2b6cb0] pl-4 py-2"><h3 class="text-xl font-semibold mb-2 leading-tight text-gray-800">${escapeHtml(localizedField(item, 'title', language))}</h3>${inventorsHtml ? `<p class="text-gray-600 mb-2">${inventorsHtml}</p>` : ''}<p class="text-gray-500 text-sm">${meta}</p></div>`;
+      }).join('');
+      patents.innerHTML = `<h2 class="text-3xl font-bold text-[#2b6cb0] mb-6">Patents</h2><div class="lang-en space-y-6">${rows('en')}</div><div class="lang-ko space-y-6" style="display:none;">${rows('ko')}</div>`;
+    }
+
     const contact = document.getElementById('contact');
     if (contact) contact.innerHTML = `<h2 class="text-3xl font-bold text-[#2b6cb0] mb-6">Contact</h2><div class="space-y-4 text-gray-700"><p class="flex items-center"><i class="fas fa-envelope mr-3 text-[#2b6cb0] w-5"></i><button onclick="copyToClipboard('${escapeHtml(data.contact?.email || '')}')" class="link-hover hover:underline text-left">${escapeHtml(data.contact?.emailDisplay || data.contact?.email || '')}</button></p><p class="flex items-center"><i class="fas fa-map-marker-alt mr-3 text-[#2b6cb0] w-5"></i>${languageSpans(data.contact, 'location')}</p></div>`;
   }
@@ -170,7 +181,7 @@
       }),
       // The print CV is a publication record: manuscripts in progress stay on
       // the web view and are excluded regardless of the on-screen toggle state.
-      papers: (data.publications?.papers || []).filter(paper => !isManuscript(paper)), projects: data.researchProjects || [], interests: (profileData.researchInterests || []).map(item => ({ title: localizedField(item, 'title', language), detail: localizedField(item, 'description', language) }))
+      papers: (data.publications?.papers || []).filter(paper => !isManuscript(paper)), projects: data.researchProjects || [], patents: (profileData.patents || []).map(item => ({ title: localizedField(item, 'title', language), number: item.number || '', year: item.year || '', status: localizedField(item, 'status', language), inventors: localizedField(item, 'inventors', language) })), interests: (profileData.researchInterests || []).map(item => ({ title: localizedField(item, 'title', language), detail: localizedField(item, 'description', language) }))
     };
   }
 

@@ -116,12 +116,32 @@ window.portfolioData = {
       },
       {
         "en": {
-          "title": "Agentic AI Framework",
-          "description": "Development of intelligent multi-agent frameworks for autonomous system management."
+          "title": "LLM Serving",
+          "description": "Performance and dependability of large language model serving clusters under GPU, software, and node failures."
         },
         "ko": {
-          "title": "에이전틱 AI 프레임워크",
-          "description": "자율 시스템 관리를 위한 지능형 멀티에이전트 프레임워크 개발."
+          "title": "LLM 서빙",
+          "description": "GPU·소프트웨어·노드 고장 아래 대규모 언어 모델(LLM) 서빙 클러스터의 성능과 신뢰성 분석."
+        }
+      },
+      {
+        "en": {
+          "title": "AI Infrastructure",
+          "description": "Performance and availability modeling of AI infrastructure such as GPU clusters, memory, and storage."
+        },
+        "ko": {
+          "title": "AI 인프라",
+          "description": "GPU 클러스터, 메모리, 스토리지 등 AI 인프라의 성능·가용성 모델링."
+        }
+      },
+      {
+        "en": {
+          "title": "AI Agent Systems",
+          "description": "Agentic AI frameworks for multi-agent systems and the dependability of multi-agent LLM workflows."
+        },
+        "ko": {
+          "title": "에이전트 시스템",
+          "description": "다중 에이전트 시스템을 위한 에이전틱 AI 프레임워크와 다중 에이전트 LLM 워크플로의 신뢰성."
         }
       },
       {
@@ -193,6 +213,23 @@ window.portfolioData = {
         }
       },
       {
+        "period": "2017.08 - 2018.12",
+        "en": {
+          "title": "Part-time Lecturer",
+          "organization": "Seoil University",
+          "details": [
+            "3 semesters, 4 classes: Embedded Systems Lab, Linux System Programming Lab"
+          ]
+        },
+        "ko": {
+          "title": "시간강사",
+          "organization": "서일대학교 컴퓨터응용전자과",
+          "details": [
+            "3학기, 4개 분반: 임베디드실습, 리눅스시스템프로그래밍 실습"
+          ]
+        }
+      },
+      {
         "period": "2015",
         "en": {
           "title": "M.S. in Computer Science",
@@ -209,6 +246,24 @@ window.portfolioData = {
             "지도교수: 민덕기 교수",
             "학위논문: \"Profile-Extensible ROHC Engine for Improving Network Transmission Efficiency\""
           ]
+        }
+      }
+    ],
+    "patents": [
+      {
+        "number": "KR 10-1724231",
+        "year": "2017",
+        "title": {
+          "en": "Method and apparatus for improving network transfer efficiency by compressing Ethernet header",
+          "ko": "이더넷 헤더 압축을 통한 네트워크 전송 효율 향상 방법 및 장치"
+        },
+        "status": {
+          "en": "Registered (now lapsed)",
+          "ko": "등록(현재 소멸)"
+        },
+        "inventors": {
+          "en": "D Min, D Lim",
+          "ko": "민덕기, 임담섭"
         }
       }
     ],

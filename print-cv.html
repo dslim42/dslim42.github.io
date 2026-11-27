@@ -57,8 +57,8 @@
         const query = new URLSearchParams(window.location.search);
         const language = query.get('lang') === 'ko' ? 'ko' : 'en';
         const labels = {
-            en: { title: 'Curriculum Vitae', personal: '1. Profile', education: '2. Education / Experience', publications: '3. Publications', projects: '4. Research Projects', activities: '5. Research Interests & Activities', position: 'Position', focus: 'Research Focus', email: 'E-mail', location: 'Location', period: 'Period', funder: 'Funder', pi: 'PI', keywords: 'Keywords', sourceNote: 'Generated from the current portfolio content at print time.' },
-            ko: { title: '이력서', personal: '1. Profile', education: '2. Education / Experience', publications: '3. Publications', projects: '4. Research Projects', activities: '5. Research Interests & Activities', position: '직위', focus: '연구 관심분야', email: '이메일', location: '소속', period: '기간', funder: '지원기관', pi: '연구책임자(PI)', keywords: 'Keywords', sourceNote: '현재 포트폴리오 화면의 내용을 인쇄 시점에 구성했습니다.' }
+            en: { title: 'Curriculum Vitae', personal: '1. Profile', education: '2. Education / Experience', publications: '3. Publications', projects: '4. Research Projects', patents: '5. Patents', activities: '6. Research Interests & Activities', inventors: 'Inventors', position: 'Position', focus: 'Research Focus', email: 'E-mail', location: 'Location', period: 'Period', funder: 'Funder', pi: 'PI', keywords: 'Keywords', sourceNote: 'Generated from the current portfolio content at print time.' },
+            ko: { title: '이력서', personal: '1. Profile', education: '2. Education / Experience', publications: '3. Publications', projects: '4. Research Projects', patents: '5. Patents', activities: '6. Research Interests & Activities', inventors: '발명자', position: '직위', focus: '연구 관심분야', email: '이메일', location: '소속', period: '기간', funder: '지원기관', pi: '연구책임자(PI)', keywords: 'Keywords', sourceNote: '현재 포트폴리오 화면의 내용을 인쇄 시점에 구성했습니다.' }
         };
 
         function escapeHtml(value) {
@@ -166,6 +166,7 @@
                 ].filter(Boolean);
                 return `<article class="project">${localizedField(project, 'title', lang) ? `<p class="project-title">${escapeHtml(localizedField(project, 'title', lang))}</p>` : ''}${meta.length ? `<p class="project-meta">${meta.map(([label, value]) => `<strong>${escapeHtml(label)}:</strong> ${escapeHtml(value)}`).join(' | ')}</p>` : ''}${details.length ? `<ul class="detail-list">${details.join('')}</ul>` : ''}</article>`;
             }).join('') || '<p>No research projects were found in the portfolio.</p>';
+            const patents = (snapshot.patents || []).map(item => `<li><strong>${escapeHtml(item.title)}</strong>${item.inventors ? `<br>${escapeHtml(text.inventors)}: ${renderAuthorsHtml(item.inventors)}` : ''}<br>${escapeHtml([item.number, item.year, item.status].filter(hasContent).join(' · '))}</li>`).join('');
             const interests = snapshot.interests.map(item => `<li><strong>${escapeHtml(item.title)}</strong>${item.detail ? `: ${escapeHtml(item.detail)}` : ''}</li>`).join('') || '<li>No research-interest entries were found in the portfolio.</li>';
 
             document.documentElement.lang = lang;
@@ -177,6 +178,7 @@
                 <section><h2>${text.education}</h2>${education}</section>
                 <section><h2>${text.publications}</h2>${paperGroups}</section>
                 <section><h2>${text.projects}</h2>${projects}</section>
+                ${patents ? `<section><h2>${text.patents}</h2><ol class="publication-list">${patents}</ol></section>` : ''}
                 <section><h2>${text.activities}</h2><ul class="activity-list">${interests}</ul></section>
                 <p class="footer-note">${text.sourceNote}</p>`;
         }

@@ -2,7 +2,9 @@
 
 Edit only JSON source files in this folder:
 
-- `profile.json`: profile, About Me, research interests, education, and contact.
+- `profile.json`: profile, About Me, research interests, education/experience,
+  patents, and contact. A patent has `number`, `year`, and bilingual `title`,
+  `status`, and `inventors`.
 - `research-projects.json`: research-project records.
 - `publications.json`: published papers and their quality metadata.
 - `manuscripts.json`: unpublished papers, including status, submission date,
