@@ -1,5 +1,28 @@
 [
   {
+    "period": "2026.03 - 2031.02",
+    "funder": {
+      "en": "National Research Foundation of Korea, Core Research (Type B)",
+      "ko": "한국연구재단(NRF) 핵심연구(유형B)"
+    },
+    "title": {
+      "en": "Safe and Cooperative Agentic AI Framework for Multi-Agent Systems",
+      "ko": "다중 에이전트 시스템을 위한 안전하고 협력적인 에이전트 AI 프레임워크"
+    },
+    "description": {
+      "en": "Participating as a core researcher (postdoctoral researcher). Responsible for dependability and availability evaluation of distributed multi-agent systems, combining hierarchical models with stochastic reward nets (SRN).",
+      "ko": "박사연구원(핵심 연구진)으로 참여하고 있습니다. 분산 다중 에이전트 시스템의 신뢰성·가용성 평가를 맡아, 계층 모델과 확률 보상망(SRN)을 결합한 모델링을 수행합니다."
+    },
+    "focus": {
+      "en": "Agentic AI · Multi-agent systems · Dependability modeling (SRN)",
+      "ko": "에이전틱 AI · 다중 에이전트 시스템 · 신뢰성 모델링(SRN)"
+    },
+    "pi": {
+      "en": "Prof. Dugki Min",
+      "ko": "민덕기 교수"
+    }
+  },
+  {
     "period": "2020.06 - Current",
     "funder": "National Research Foundation of Korea",
     "funderKo": "한국연구재단(NRF)",
