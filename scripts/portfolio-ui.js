@@ -23,6 +23,23 @@
     return (language === 'ko' ? [...korean, ...english] : [...english, ...korean]).find(hasContent) || '';
   };
 
+  // Date-switched content, judged by the Korean calendar date (KST) so the
+  // switch happens at the same moment for every visitor:
+  //   - an object's "before": { "date": "YYYY-MM-DD", ...fields } supplies the
+  //     field values shown until that date;
+  //   - an array item with "showFrom": "YYYY-MM-DD" is hidden until that date.
+  const todayKst = new Date(Date.now() + 9 * 60 * 60 * 1000).toISOString().slice(0, 10);
+  const applySchedule = value => {
+    if (Array.isArray(value)) return value.filter(item => !(item && item.showFrom && todayKst < item.showFrom)).map(applySchedule);
+    if (!value || typeof value !== 'object') return value;
+    const { before, showFrom, ...rest } = value;
+    const current = before && todayKst < before.date
+      ? { ...rest, ...Object.fromEntries(Object.entries(before).filter(([key]) => key !== 'date')) }
+      : rest;
+    return Object.fromEntries(Object.entries(current).map(([key, child]) => [key, applySchedule(child)]));
+  };
+  if (window.portfolioData) window.portfolioData = applySchedule(window.portfolioData);
+
   // Accepted and in-press papers are publication records (main list and print
   // CV); every other non-published status is a manuscript in progress.
   const PUBLICATION_STATUSES = ['published', 'accepted', 'in press'];

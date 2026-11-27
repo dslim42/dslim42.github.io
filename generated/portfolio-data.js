@@ -12,6 +12,13 @@ window.portfolioData = {
         "en": "Research Professor at KADA, Konkuk Univ.",
         "ko": "건국대학교 KADA 학술연구교수"
       },
+      "before": {
+        "date": "2026-12-01",
+        "position": {
+          "en": "PostDoc Researcher at KADA, Konkuk Univ.",
+          "ko": "건국대학교 KADA 박사후연구원"
+        }
+      },
       "focus": {
         "en": "Research interests in Distributed Systems and Performance Reliability",
         "ko": "관심분야: 분산 시스템 및 성능 신뢰성"
@@ -39,7 +46,11 @@ window.portfolioData = {
       {
         "en": [
           {
-            "text": "I am currently working as a research professor at "
+            "text": "I am currently working as a research professor at ",
+            "before": {
+              "date": "2026-12-01",
+              "text": "I am currently working as a postdoctoral researcher at "
+            }
           },
           {
             "text": "KADA",
@@ -65,7 +76,11 @@ window.portfolioData = {
             "href": "https://sites.google.com/view/kadalab/home"
           },
           {
-            "text": "에서 학술연구교수로 재직 중입니다. 건국대학교 "
+            "text": "에서 학술연구교수로 재직 중입니다. 건국대학교 ",
+            "before": {
+              "date": "2026-12-01",
+              "text": "에서 PostDoc으로 재직중입니다. 건국대학교 "
+            }
           },
           {
             "text": "DMS 연구실",
@@ -178,6 +193,7 @@ window.portfolioData = {
     "educationExperience": [
       {
         "period": "2026.12 - Current",
+        "showFrom": "2026-12-01",
         "en": {
           "title": "Research Professor",
           "organization": "Konkuk Aerospace Design & Airworthiness Institute (KADA)",
@@ -195,6 +211,10 @@ window.portfolioData = {
       },
       {
         "period": "2025.12 - 2026.11",
+        "before": {
+          "date": "2026-12-01",
+          "period": "2025.12 - Current"
+        },
         "en": {
           "title": "PostDoc Researcher",
           "organization": "Konkuk Aerospace Design & Airworthiness Institute (KADA)",

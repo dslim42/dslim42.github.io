@@ -147,6 +147,23 @@ Use `journalGrade` for any manually written journal-quality label, such as
 you want the journal-grade label itself to be different in Korean; the
 publication status remains English by design.
 
+## Date-Switched Content
+
+Values can change on a set date without a new push. The date is the Korean
+calendar date (KST), so the switch happens at the same moment for everyone.
+
+- Any object may carry `"before": { "date": "YYYY-MM-DD", ...fields }`. Until
+  that date the listed fields replace the object's own values.
+- Any list item may carry `"showFrom": "YYYY-MM-DD"`; it is hidden until then.
+
+```json
+"position": { "en": "Research Professor at KADA, Konkuk Univ.", "ko": "…" },
+"before": { "date": "2026-12-01", "position": { "en": "PostDoc Researcher at KADA, Konkuk Univ.", "ko": "…" } }
+```
+
+After the date passes, remove the `before`/`showFrom` keys and update the
+static fallback text in `index.html` to match.
+
 ## Local Build
 
 ```bash
